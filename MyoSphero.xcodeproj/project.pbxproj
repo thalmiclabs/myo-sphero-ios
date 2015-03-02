@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		374BF749190EDFEB00DBE668 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374BF746190EDFEB00DBE668 /* RobotKit.framework */; };
+		374BF74A190EDFEB00DBE668 /* RobotUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 374BF747190EDFEB00DBE668 /* RobotUIKit.bundle */; };
+		374BF74B190EDFEB00DBE668 /* RobotUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374BF748190EDFEB00DBE668 /* RobotUIKit.framework */; };
+		4D57D211180301050095081E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D57D210180301050095081E /* libz.dylib */; };
+		4D92996917E7A81200C52D68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D92996817E7A81200C52D68 /* Foundation.framework */; };
+		4D92996B17E7A81200C52D68 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D92996A17E7A81200C52D68 /* CoreGraphics.framework */; };
+		4D92996D17E7A81200C52D68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D92996C17E7A81200C52D68 /* UIKit.framework */; };
+		4D92996F17E7A81200C52D68 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D92996E17E7A81200C52D68 /* CoreMotion.framework */; };
+		4D92997117E7A81200C52D68 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D92997017E7A81200C52D68 /* GameKit.framework */; };
+		4D92997317E7A81200C52D68 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D92997217E7A81200C52D68 /* ExternalAccessory.framework */; };
+		4D92997917E7A81200C52D68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D92997717E7A81200C52D68 /* InfoPlist.strings */; };
+		4D92997B17E7A81200C52D68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D92997A17E7A81200C52D68 /* main.m */; };
+		4D92997F17E7A81200C52D68 /* MSPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D92997E17E7A81200C52D68 /* MSPAppDelegate.m */; };
+		4D92998E17E7A81200C52D68 /* MSPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D92998D17E7A81200C52D68 /* MSPViewController.m */; };
+		4D92999617E7A81200C52D68 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D92999517E7A81200C52D68 /* Images.xcassets */; };
+		4D9299C317E7ABA500C52D68 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9299C217E7ABA500C52D68 /* SystemConfiguration.framework */; };
+		4DA163B018A2F4FD00D498B7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA163AF18A2F4FD00D498B7 /* AudioToolbox.framework */; };
+		54919EBE1A13DE0A00D3A823 /* MSPLookAndFeel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54919EBD1A13DE0A00D3A823 /* MSPLookAndFeel.m */; };
+		54919EC31A150C1300D3A823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54919EC21A150C1300D3A823 /* Main.storyboard */; };
+		54919EC71A15144E00D3A823 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 54919EC61A15144E00D3A823 /* libstdc++.6.dylib */; };
+		54D9F6471A2F88E400EF2D51 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9F6461A2F88E400EF2D51 /* MyoKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		374BF746190EDFEB00DBE668 /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotKit.framework; path = MyoSphero/Frameworks/RobotKit.framework; sourceTree = "<group>"; };
+		374BF747190EDFEB00DBE668 /* RobotUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = RobotUIKit.bundle; path = MyoSphero/Frameworks/RobotUIKit.bundle; sourceTree = "<group>"; };
+		374BF748190EDFEB00DBE668 /* RobotUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotUIKit.framework; path = MyoSphero/Frameworks/RobotUIKit.framework; sourceTree = "<group>"; };
+		4D57D210180301050095081E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		4D92996517E7A81200C52D68 /* Myo+Sphero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Myo+Sphero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D92996817E7A81200C52D68 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4D92996A17E7A81200C52D68 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4D92996C17E7A81200C52D68 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4D92996E17E7A81200C52D68 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		4D92997017E7A81200C52D68 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		4D92997217E7A81200C52D68 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		4D92997617E7A81200C52D68 /* MyoSphero-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyoSphero-Info.plist"; sourceTree = "<group>"; };
+		4D92997817E7A81200C52D68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4D92997A17E7A81200C52D68 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4D92997C17E7A81200C52D68 /* MyoSphero-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyoSphero-Prefix.pch"; sourceTree = "<group>"; };
+		4D92997D17E7A81200C52D68 /* MSPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSPAppDelegate.h; sourceTree = "<group>"; };
+		4D92997E17E7A81200C52D68 /* MSPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSPAppDelegate.m; sourceTree = "<group>"; };
+		4D92998C17E7A81200C52D68 /* MSPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSPViewController.h; sourceTree = "<group>"; };
+		4D92998D17E7A81200C52D68 /* MSPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MSPViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4D92999517E7A81200C52D68 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4D92999C17E7A81200C52D68 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4D9299C217E7ABA500C52D68 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4DA163AF18A2F4FD00D498B7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		54919EBC1A13DE0A00D3A823 /* MSPLookAndFeel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPLookAndFeel.h; sourceTree = "<group>"; };
+		54919EBD1A13DE0A00D3A823 /* MSPLookAndFeel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPLookAndFeel.m; sourceTree = "<group>"; };
+		54919EC21A150C1300D3A823 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		54919EC41A15141800D3A823 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		54919EC61A15144E00D3A823 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
+		54D9F6461A2F88E400EF2D51 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyoKit.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4D92996217E7A81200C52D68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54919EC71A15144E00D3A823 /* libstdc++.6.dylib in Frameworks */,
+				54D9F6471A2F88E400EF2D51 /* MyoKit.framework in Frameworks */,
+				4DA163B018A2F4FD00D498B7 /* AudioToolbox.framework in Frameworks */,
+				4D57D211180301050095081E /* libz.dylib in Frameworks */,
+				4D9299C317E7ABA500C52D68 /* SystemConfiguration.framework in Frameworks */,
+				4D92997317E7A81200C52D68 /* ExternalAccessory.framework in Frameworks */,
+				374BF74B190EDFEB00DBE668 /* RobotUIKit.framework in Frameworks */,
+				4D92996B17E7A81200C52D68 /* CoreGraphics.framework in Frameworks */,
+				4D92996D17E7A81200C52D68 /* UIKit.framework in Frameworks */,
+				374BF749190EDFEB00DBE668 /* RobotKit.framework in Frameworks */,
+				4D92996917E7A81200C52D68 /* Foundation.framework in Frameworks */,
+				4D92996F17E7A81200C52D68 /* CoreMotion.framework in Frameworks */,
+				4D92997117E7A81200C52D68 /* GameKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D92995C17E7A81200C52D68 = {
+			isa = PBXGroup;
+			children = (
+				4D92997417E7A81200C52D68 /* MyoSphero */,
+				4D92996717E7A81200C52D68 /* Frameworks */,
+				4D92996617E7A81200C52D68 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D92996617E7A81200C52D68 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D92996517E7A81200C52D68 /* Myo+Sphero.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D92996717E7A81200C52D68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54D9F6461A2F88E400EF2D51 /* MyoKit.framework */,
+				54919EC61A15144E00D3A823 /* libstdc++.6.dylib */,
+				54919EC41A15141800D3A823 /* libsqlite3.0.dylib */,
+				4DA163AF18A2F4FD00D498B7 /* AudioToolbox.framework */,
+				4D57D210180301050095081E /* libz.dylib */,
+				374BF746190EDFEB00DBE668 /* RobotKit.framework */,
+				374BF747190EDFEB00DBE668 /* RobotUIKit.bundle */,
+				374BF748190EDFEB00DBE668 /* RobotUIKit.framework */,
+				4D9299C217E7ABA500C52D68 /* SystemConfiguration.framework */,
+				4D92996817E7A81200C52D68 /* Foundation.framework */,
+				4D92996A17E7A81200C52D68 /* CoreGraphics.framework */,
+				4D92996C17E7A81200C52D68 /* UIKit.framework */,
+				4D92996E17E7A81200C52D68 /* CoreMotion.framework */,
+				4D92997017E7A81200C52D68 /* GameKit.framework */,
+				4D92997217E7A81200C52D68 /* ExternalAccessory.framework */,
+				4D92999C17E7A81200C52D68 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D92997417E7A81200C52D68 /* MyoSphero */ = {
+			isa = PBXGroup;
+			children = (
+				4D92997D17E7A81200C52D68 /* MSPAppDelegate.h */,
+				4D92997E17E7A81200C52D68 /* MSPAppDelegate.m */,
+				4D92998C17E7A81200C52D68 /* MSPViewController.h */,
+				4D92998D17E7A81200C52D68 /* MSPViewController.m */,
+				54919EC21A150C1300D3A823 /* Main.storyboard */,
+				54919EBC1A13DE0A00D3A823 /* MSPLookAndFeel.h */,
+				54919EBD1A13DE0A00D3A823 /* MSPLookAndFeel.m */,
+				4D92999517E7A81200C52D68 /* Images.xcassets */,
+				4D92997517E7A81200C52D68 /* Supporting Files */,
+			);
+			path = MyoSphero;
+			sourceTree = "<group>";
+		};
+		4D92997517E7A81200C52D68 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4D92997617E7A81200C52D68 /* MyoSphero-Info.plist */,
+				4D92997717E7A81200C52D68 /* InfoPlist.strings */,
+				4D92997A17E7A81200C52D68 /* main.m */,
+				4D92997C17E7A81200C52D68 /* MyoSphero-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4D92996417E7A81200C52D68 /* MyoSphero */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D9299AC17E7A81300C52D68 /* Build configuration list for PBXNativeTarget "MyoSphero" */;
+			buildPhases = (
+				4D92996117E7A81200C52D68 /* Sources */,
+				4D92996217E7A81200C52D68 /* Frameworks */,
+				4D92996317E7A81200C52D68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyoSphero;
+			productName = MyoSphero;
+			productReference = 4D92996517E7A81200C52D68 /* Myo+Sphero.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4D92995D17E7A81200C52D68 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MSP;
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Thalmic Labs";
+				TargetAttributes = {
+					4D92996417E7A81200C52D68 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 4D92996017E7A81200C52D68 /* Build configuration list for PBXProject "MyoSphero" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4D92995C17E7A81200C52D68;
+			productRefGroup = 4D92996617E7A81200C52D68 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D92996417E7A81200C52D68 /* MyoSphero */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D92996317E7A81200C52D68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D92999617E7A81200C52D68 /* Images.xcassets in Resources */,
+				54919EC31A150C1300D3A823 /* Main.storyboard in Resources */,
+				4D92997917E7A81200C52D68 /* InfoPlist.strings in Resources */,
+				374BF74A190EDFEB00DBE668 /* RobotUIKit.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D92996117E7A81200C52D68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D92997B17E7A81200C52D68 /* main.m in Sources */,
+				4D92998E17E7A81200C52D68 /* MSPViewController.m in Sources */,
+				4D92997F17E7A81200C52D68 /* MSPAppDelegate.m in Sources */,
+				54919EBE1A13DE0A00D3A823 /* MSPLookAndFeel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4D92997717E7A81200C52D68 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D92997817E7A81200C52D68 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4D9299AA17E7A81300C52D68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4D9299AB17E7A81300C52D68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4D9299AD17E7A81300C52D68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = armv7;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyoSphero/Frameworks",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyoSphero/MyoSphero-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "MyoSphero/MyoSphero-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+					"-lsqlite3.0",
+				);
+				PRODUCT_NAME = "Myo+Sphero";
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4D9299AE17E7A81300C52D68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = armv7;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyoSphero/Frameworks",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyoSphero/MyoSphero-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "MyoSphero/MyoSphero-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+					"-lsqlite3.0",
+				);
+				PRODUCT_NAME = "Myo+Sphero";
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D92996017E7A81200C52D68 /* Build configuration list for PBXProject "MyoSphero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D9299AA17E7A81300C52D68 /* Debug */,
+				4D9299AB17E7A81300C52D68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D9299AC17E7A81300C52D68 /* Build configuration list for PBXNativeTarget "MyoSphero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D9299AD17E7A81300C52D68 /* Debug */,
+				4D9299AE17E7A81300C52D68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4D92995D17E7A81200C52D68 /* Project object */;
+}
