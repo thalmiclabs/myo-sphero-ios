@@ -21,3 +21,4 @@
 #import <MyoKit/TLMArmUnsyncEvent.h>
 #import <MyoKit/TLMUnlockEvent.h>
 #import <MyoKit/TLMLockEvent.h>
+#import <MyoKit/TLMEmgEvent.h>

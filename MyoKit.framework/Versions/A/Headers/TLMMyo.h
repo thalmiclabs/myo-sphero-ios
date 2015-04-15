@@ -83,6 +83,13 @@ extern NSString *const TLMMyoDidReceiveUnlockEventNotification;
  */
 extern NSString *const TLMMyoDidReceiveLockEventNotification;
 
+/**
+ Posted when a new EMG event is available from a TLMMyo.
+
+ kTLMKeyEmgEvent -> TLMEmgEvent
+ */
+extern NSString *const TLMMyoDidReceiveEmgEventNotification;
+
 /** @} */
 
 /**
@@ -133,6 +140,11 @@ extern NSString *const kTLMKeyUnlockEvent;
  */
 extern NSString *const kTLMKeyLockEvent;
 
+/**
+ NSNotification userInfo key for a TLMEmgEvent object.
+ */
+extern NSString *const kTLMKeyEMGEvent;
+
 /** @} */
 
 //--------
@@ -171,6 +183,11 @@ typedef NS_ENUM (NSInteger, TLMVibrationLength) {
 typedef NS_ENUM (NSInteger, TLMUnlockType) {
     TLMUnlockTypeTimed, /**< Unlock now and re-lock after a fixed time. */
     TLMUnlockTypeHold     /**< Unlock now and remain unlocked until a lock command is received. */
+};
+
+typedef NS_ENUM (NSInteger, TLMStreamEmgType) {
+    TLMStreamEmgDisabled,
+    TLMStreamEmgEnabled
 };
 
 /**
@@ -244,5 +261,10 @@ typedef NS_ENUM (NSInteger, TLMUnlockType) {
  Force the TLMMyo to lock again. Has no effect if the TLMMyo is already locked.
  */
 - (void)lock;
+
+/**
+ Sets the EMG streaming mode for the TLMMyo.
+ */
+- (void)setStreamEmg:(TLMStreamEmgType)type;
 
 @end

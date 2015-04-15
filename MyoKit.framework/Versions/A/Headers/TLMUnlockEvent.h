@@ -12,4 +12,10 @@
 
 @interface TLMUnlockEvent : NSObject <NSCopying>
 
+/** The TLMMyo for this unlock event. */
+@property (nonatomic, weak, readonly) TLMMyo *myo;
+
+/** The time of the unlock event. */
+@property (nonatomic, strong, readonly) NSDate *timestamp;
+
 @end

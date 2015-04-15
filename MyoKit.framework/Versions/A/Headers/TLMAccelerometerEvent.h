@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <GLKit/GLKMath.h>
+#import "TLMMath.h"
 
 @class TLMMyo;
 
@@ -24,7 +24,7 @@
 /**
    A vector representing the TLMMyo's acceleration (in Gs).
  */
-@property (nonatomic, readonly) GLKVector3 vector;
+@property (nonatomic, readonly) TLMVector3 vector;
 
 /**
    The timestamp associated with the acceleration event.

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <GLKit/GLKMath.h>
+#import "TLMMath.h"
 #import "TLMEulerAngles.h"
 
 @class TLMMyo;
@@ -25,7 +25,7 @@
 /**
    Orientation representation as a normalized quaternion.
  */
-@property (nonatomic, readonly) GLKQuaternion quaternion;
+@property (nonatomic, readonly) TLMQuaternion quaternion;
 
 /**
    The timestamp associated with the orientation.

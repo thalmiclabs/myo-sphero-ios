@@ -224,7 +224,7 @@
     return (self.myo.arm == TLMArmLeft ? TLMPoseTypeWaveIn : TLMPoseTypeWaveOut);
 }
 
-- (void)calculateRelativeEulerAnglesForQuaternion:(GLKQuaternion)quaternion {
+- (void)calculateRelativeEulerAnglesForQuaternion:(TLMQuaternion)quaternion {
     TLMEulerAngles *currentEulerAngles = [TLMEulerAngles anglesWithQuaternion:quaternion];
 
     BOOL towardsElbow = self.myo.xDirection == TLMArmXDirectionTowardElbow;

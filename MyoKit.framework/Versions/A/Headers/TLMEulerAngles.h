@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <GLKit/GLKMath.h>
+#import "TLMMath.h"
 #import "TLMAngle.h"
 
 /**
@@ -36,6 +36,6 @@
 /**
    Creates and returns the Euler angles corresponding to the given quaternion.
  */
-+ (instancetype)anglesWithQuaternion:(GLKQuaternion)quaternion;
++ (instancetype)anglesWithQuaternion:(TLMQuaternion)quaternion;
 
 @end
