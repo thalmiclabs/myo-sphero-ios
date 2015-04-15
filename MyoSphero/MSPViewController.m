@@ -325,12 +325,15 @@
                     self.referenceEulerAngles = [TLMEulerAngles anglesWithQuaternion:self.myo.orientation.quaternion];
                 }
             }
+            break;
         case TLMPoseTypeFist:
-            if (isBeginning) {
-                self.referenceEulerAngles = [TLMEulerAngles anglesWithQuaternion:self.myo.orientation.quaternion];
+            if (self.isCalibrating) {
+                if (isBeginning) {
+                    self.referenceEulerAngles = [TLMEulerAngles anglesWithQuaternion:self.myo.orientation.quaternion];
+                }
+                // Indicate user action for both beginning and end of fist.
+                [self.myo indicateUserAction];
             }
-            // Indicate user action for both beginning and end of fist.
-            [self.myo indicateUserAction];
             break;
 
         default:
