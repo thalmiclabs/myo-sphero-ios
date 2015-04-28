@@ -32,10 +32,20 @@
 
 @property (nonatomic, strong) RKRobotControl *robotControl;
 
+
+@property (weak, nonatomic) IBOutlet UIButton *addSpheroButton;
+@property (weak, nonatomic) IBOutlet UIButton *addMyoButton;
+@property (weak, nonatomic) IBOutlet UIImageView *spheroImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *myoImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *spheroCheckmark;
+@property (weak, nonatomic) IBOutlet UIImageView *myoCheckmark;
+@property (weak, nonatomic) IBOutlet UILabel *spheroLabel;
+@property (weak, nonatomic) IBOutlet UILabel *myoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *spheroStateLabel;
+
+// TODO: remove these properties
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UIButton *enableMyoButton;
-
-- (IBAction)enableMyoTapped:(UIButton *)sender;
 
 @end
 
@@ -351,9 +361,12 @@
 
 #pragma mark - IBAction Methods
 
-- (IBAction)enableMyoTapped:(UIButton *)sender {
-    self.isMyoEnabled = !self.isMyoEnabled;
-    [self updateUIForMyoState];
+- (IBAction)addSpheroTapped:(UIButton *)sender {
+
+}
+
+- (IBAction)addMyoTapped:(UIButton *)sender {
+    
 }
 
 @end

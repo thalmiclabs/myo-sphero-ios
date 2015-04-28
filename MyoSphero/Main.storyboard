@@ -16,7 +16,76 @@
                     <view key="view" contentMode="scaleToFill" id="93s-qz-AAj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gcy-Fu-9sR">
+                                <rect key="frame" x="150" y="87" width="300" height="361"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sphero_faded" highlightedImage="sphero" translatesAutoresizingMaskIntoConstraints="NO" id="9dm-QP-Gj4">
+                                        <rect key="frame" x="95" y="8" width="110" height="110"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="myo_faded" highlightedImage="myo" translatesAutoresizingMaskIntoConstraints="NO" id="U4b-BV-gld">
+                                        <rect key="frame" x="95" y="202" width="110" height="110"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONNECT SPHERO..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI0-LI-KlM">
+                                        <rect key="frame" x="8" y="126" width="284" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4G-xW-fdz">
+                                        <rect key="frame" x="213" y="8" width="50" height="50"/>
+                                        <state key="normal" image="add_button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="close_button"/>
+                                        <connections>
+                                            <action selector="addSpheroTapped:" destination="xNC-1E-zeA" eventType="touchUpInside" id="Hji-NX-0Lu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWd-9Z-Vdu">
+                                        <rect key="frame" x="213" y="202" width="50" height="50"/>
+                                        <state key="normal" image="add_button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="close_button"/>
+                                        <connections>
+                                            <action selector="addMyoTapped:" destination="xNC-1E-zeA" eventType="touchUpInside" id="mqx-go-KKz"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="synced_checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="fas-P5-8dY">
+                                        <rect key="frame" x="95" y="202" width="24" height="24"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="synced_checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="h4c-2h-TFB">
+                                        <rect key="frame" x="95" y="8" width="24" height="24"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="READY TO CALIBRATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSL-Xe-LuZ">
+                                        <rect key="frame" x="8" y="141" width="284" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="connected_dots" translatesAutoresizingMaskIntoConstraints="NO" id="oAk-YT-g48">
+                                        <rect key="frame" x="144" y="164" width="12" height="28"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONNECT MYO..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjj-IV-OdE">
+                                        <rect key="frame" x="60" y="320" width="180" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="aFU-yF-atc"/>
+                                    <constraint firstAttribute="height" constant="361" id="f8f-8t-R0c"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Gcy-Fu-9sR" secondAttribute="centerX" id="8Pb-Ni-ib4"/>
+                            <constraint firstAttribute="centerY" secondItem="Gcy-Fu-9sR" secondAttribute="centerY" id="f9s-hJ-Hbf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Myo+Sphero" id="K0i-j2-zMm">
                         <barButtonItem key="rightBarButtonItem" title="Instructions" id="GlZ-f5-bsd">
@@ -26,29 +95,21 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="addMyoButton" destination="aWd-9Z-Vdu" id="3rR-te-iZ4"/>
+                        <outlet property="addSpheroButton" destination="B4G-xW-fdz" id="va5-Qz-h3i"/>
+                        <outlet property="myoCheckmark" destination="fas-P5-8dY" id="ZPL-3M-4bv"/>
+                        <outlet property="myoImageView" destination="U4b-BV-gld" id="xgh-Jz-IxJ"/>
+                        <outlet property="myoLabel" destination="wjj-IV-OdE" id="ZNb-Gb-TTw"/>
+                        <outlet property="spheroCheckmark" destination="h4c-2h-TFB" id="AzE-ZS-LDu"/>
+                        <outlet property="spheroImageView" destination="9dm-QP-Gj4" id="KP6-iv-wZk"/>
+                        <outlet property="spheroLabel" destination="WI0-LI-KlM" id="bTd-cE-lfW"/>
+                        <outlet property="spheroStateLabel" destination="pSL-Xe-LuZ" id="bpJ-rQ-2cH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLI-OG-DLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1230" y="377"/>
-        </scene>
-        <!--Settings View Controller-->
-        <scene sceneID="QlW-cj-r5q">
-            <objects>
-                <viewController id="Vj6-Qh-DMs" customClass="TLMSettingsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Poh-t3-Hbg"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ozx-e3-E8p"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RbK-eF-rPI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="S0M-z3-G1G"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0pG-bn-rZf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2638" y="1087"/>
         </scene>
         <!--Instructions-->
         <scene sceneID="bbj-vu-nG3">
@@ -112,26 +173,16 @@
             </objects>
             <point key="canvasLocation" x="1939" y="377"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="l2e-mr-9Rb">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pfe-CR-ZCV" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="BoX-cx-2yR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Vj6-Qh-DMs" kind="relationship" relationship="rootViewController" id="3cx-fh-nKK"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ydi-qT-pDc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1939" y="1087"/>
-        </scene>
     </scenes>
+    <resources>
+        <image name="add_button" width="50" height="50"/>
+        <image name="close_button" width="50" height="50"/>
+        <image name="connected_dots" width="12" height="28"/>
+        <image name="myo" width="114" height="123"/>
+        <image name="myo_faded" width="114" height="123"/>
+        <image name="sphero" width="110" height="110"/>
+        <image name="sphero_faded" width="110" height="110"/>
+        <image name="synced_checkbox" width="24" height="24"/>
+    </resources>
     <color key="tintColor" red="0.0" green="0.73725490199999999" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
