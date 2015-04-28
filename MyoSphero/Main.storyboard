@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iD6-Vg-d2W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iD6-Vg-d2W">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--Myo+Sphero-->
@@ -15,56 +14,18 @@
                         <viewControllerLayoutGuide type="bottom" id="DCa-qI-RXW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="93s-qz-AAj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gB8-N3-DXz">
-                                <rect key="frame" x="200" y="530" width="200" height="50"/>
-                                <color key="backgroundColor" red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="gcm-71-iVd"/>
-                                    <constraint firstAttribute="width" constant="200" id="lcT-75-jUb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="Enable Myo">
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="enableMyoTapped:" destination="xNC-1E-zeA" eventType="touchUpInside" id="1E3-Wy-QML"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TA-5x-tbv">
-                                <rect key="frame" x="76" y="259" width="448" height="82"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="82" id="hwJ-LY-ITS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="gB8-N3-DXz" secondAttribute="centerX" id="4kw-N8-IPv"/>
-                            <constraint firstItem="5TA-5x-tbv" firstAttribute="leading" secondItem="93s-qz-AAj" secondAttribute="leadingMargin" constant="60" id="S1g-u7-XTN"/>
-                            <constraint firstAttribute="centerX" secondItem="5TA-5x-tbv" secondAttribute="centerX" id="gzt-GC-xF7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5TA-5x-tbv" secondAttribute="trailing" constant="60" id="rhM-8W-Sm3"/>
-                            <constraint firstAttribute="centerY" secondItem="5TA-5x-tbv" secondAttribute="centerY" id="syr-Gn-kqP"/>
-                            <constraint firstItem="DCa-qI-RXW" firstAttribute="top" secondItem="gB8-N3-DXz" secondAttribute="bottom" constant="20" id="yV9-f6-h6r"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Myo+Sphero" id="K0i-j2-zMm">
-                        <barButtonItem key="leftBarButtonItem" title="Pair" id="m1v-pa-4cw">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <barButtonItem key="rightBarButtonItem" title="Instructions" id="GlZ-f5-bsd">
                             <connections>
-                                <segue destination="Vj6-Qh-DMs" kind="show" id="8db-lc-DWO"/>
+                                <segue destination="uOS-3e-Now" kind="presentation" modalPresentationStyle="pageSheet" id="YFy-BJ-aep"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="enableMyoButton" destination="gB8-N3-DXz" id="pM1-Oq-9lG"/>
-                        <outlet property="statusLabel" destination="5TA-5x-tbv" id="4Qy-vG-ZFX"/>
-                    </connections>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLI-OG-DLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,7 +40,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Ozx-e3-E8p"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RbK-eF-rPI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -87,17 +48,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pG-bn-rZf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1935" y="377"/>
+            <point key="canvasLocation" x="2638" y="1087"/>
+        </scene>
+        <!--Instructions-->
+        <scene sceneID="bbj-vu-nG3">
+            <objects>
+                <viewController id="wqR-4D-JYy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N9z-Ym-2yI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Grm-G2-N8F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hDb-RA-hhA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Instructions" id="bXt-XU-7MA">
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="Mos-uK-zwW"/>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PLs-bh-u8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2638" y="377"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="m2g-uK-dwg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iD6-Vg-d2W" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="HNo-H7-mqS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="HNo-H7-mqS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.73725490199999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -111,5 +93,45 @@
             </objects>
             <point key="canvasLocation" x="527" y="377"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xvG-XR-fKH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uOS-3e-Now" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="5Jq-jC-TS1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wqR-4D-JYy" kind="relationship" relationship="rootViewController" id="ctu-qZ-vBv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Dw-mG-SaG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1939" y="377"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="l2e-mr-9Rb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pfe-CR-ZCV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="BoX-cx-2yR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Vj6-Qh-DMs" kind="relationship" relationship="rootViewController" id="3cx-fh-nKK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ydi-qT-pDc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1939" y="1087"/>
+        </scene>
     </scenes>
+    <color key="tintColor" red="0.0" green="0.73725490199999999" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
