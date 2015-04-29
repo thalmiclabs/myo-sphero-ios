@@ -73,6 +73,12 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PERFORM SYNC GESTURE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTG-Ri-BOJ">
+                                        <rect key="frame" x="8" y="335" width="284" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -101,6 +107,7 @@
                         <outlet property="myoCheckmark" destination="fas-P5-8dY" id="ZPL-3M-4bv"/>
                         <outlet property="myoImageView" destination="U4b-BV-gld" id="xgh-Jz-IxJ"/>
                         <outlet property="myoLabel" destination="wjj-IV-OdE" id="ZNb-Gb-TTw"/>
+                        <outlet property="myoStateLabel" destination="qTG-Ri-BOJ" id="RNG-Da-s3z"/>
                         <outlet property="spheroCheckmark" destination="h4c-2h-TFB" id="AzE-ZS-LDu"/>
                         <outlet property="spheroImageView" destination="9dm-QP-Gj4" id="KP6-iv-wZk"/>
                         <outlet property="spheroLabel" destination="WI0-LI-KlM" id="bTd-cE-lfW"/>
