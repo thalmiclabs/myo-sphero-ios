@@ -42,6 +42,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *spheroLabel;
 @property (weak, nonatomic) IBOutlet UILabel *myoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *spheroStateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *myoStateLabel;
 
 // TODO: remove these properties
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
@@ -124,27 +125,45 @@
 }
 
 - (void)updateUIForMyoState {
-    if (!self.robotControl) {
-        self.statusLabel.text = @"Please connect Sphero.";
-    } else if (!self.myo) {
-        self.statusLabel.text = @"Please connect a Myo.";
-    } else if (self.myo.arm == TLMArmUnknown && self.myo.state == TLMMyoConnectionStateConnected) {
-        self.statusLabel.text = @"Please perform the Sync Gesture.";
-    } else if (!self.isMyoEnabled) {
-        self.statusLabel.text = @"Myo Disabled";
-    } else if (self.isCalibrating) {
-        self.statusLabel.text = @"Calibrating Sphero";
-    } else {
-        self.statusLabel.text = @"Controlling Sphero";
-    }
 
-    // Enable Myo button
-    if (self.isMyoEnabled) {
-        [self.enableMyoButton setTitle:@"Disable Myo" forState:UIControlStateNormal];
-        self.enableMyoButton.backgroundColor = [MSPLookAndFeel thalmicBlue];
+    BOOL spheroConnected = self.robotControl != nil;
+    BOOL myoConnected = self.myo != nil && self.myo.state == TLMMyoConnectionStateConnected;
+
+    // Visibility
+    [self.addSpheroButton setSelected:spheroConnected];
+    [self.spheroCheckmark setHidden:!spheroConnected];
+    [self.spheroImageView setHighlighted:spheroConnected];
+    [self.spheroStateLabel setHidden:!spheroConnected];
+
+    [self.addMyoButton setSelected:myoConnected];
+    [self.myoCheckmark setHidden:!myoConnected];
+    [self.myoImageView setHighlighted:myoConnected];
+    [self.myoStateLabel setHidden:!myoConnected];
+
+    // Colors
+    [self.spheroLabel setTextColor:spheroConnected ? [UIColor whiteColor] : [UIColor blackColor]];
+    [self.myoLabel setTextColor:myoConnected ? [UIColor whiteColor] : [UIColor blackColor]];
+
+    // Text
+    if (self.isCalibrating) {
+        [self.spheroStateLabel setText: @"CALIBRATION MODE"];
     } else {
-        [self.enableMyoButton setTitle:@"Enable Myo" forState:UIControlStateNormal];
-        self.enableMyoButton.backgroundColor = [MSPLookAndFeel disabledGrey];
+        [self.spheroStateLabel setText: @"DRIVE MODE"];
+    }
+    if (self.myo.arm == TLMArmUnknown && self.myo.state == TLMMyoConnectionStateConnected) {
+        [self.myoStateLabel setText:@"PERFORM SYNC GESTURE"];
+    } else {
+        [self.myoStateLabel setText:@"MYO SYNCED"];
+    }
+    if (myoConnected) {
+        [self.myoLabel setText:self.myo.name];
+    } else {
+        [self.myoLabel setText:@"CONNECT MYO..."];
+    }
+    if (spheroConnected) {
+        [self.spheroLabel setText:self.robotControl.robot.name];
+    } else {
+        [self.spheroLabel setText:@"CONNECT SPHERO..."];
     }
 }
 
@@ -366,7 +385,15 @@
 }
 
 - (IBAction)addMyoTapped:(UIButton *)sender {
-    
+    UINavigationController *settingsNavController = [TLMSettingsViewController settingsInNavigationController];
+    settingsNavController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    settingsNavController.navigationBar.translucent = NO;
+    settingsNavController.modalPresentationStyle = UIModalPresentationFormSheet;
+    settingsNavController.navigationBar.tintColor = [UIColor colorWithRed:0.0/255.0
+                                                                    green:188.0/255.0
+                                                                     blue:221.0/255.0
+                                                                    alpha:1.0];
+    [self presentViewController:settingsNavController animated:YES completion:nil];
 }
 
 @end
