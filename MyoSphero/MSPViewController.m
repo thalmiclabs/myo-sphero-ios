@@ -381,8 +381,16 @@
 #pragma mark - IBAction Methods
 
 - (IBAction)addSpheroTapped:(UIButton *)sender {
-    UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Connect Sphero"
-                                                                        message:@"Connect Sphero in the iOS Settings app. Go to Settings > Bluetooth and tap on Sphero in the list of devices."
+    NSString *title = @"Connect Sphero";
+    NSString *message = @"Connect Sphero in the iOS Settings app. Go to Settings > Bluetooth and tap on Sphero in the list of devices.";
+
+    if ([sender isSelected]) {
+        title = @"Disconnect Sphero";
+        message = @"Sphero can be disconnected in the iOS Settings app. Go to Settings > Bluetooth, tap the \"i\" icon next to Sphero in the list of devices, and tap \"Forget Device\".";
+    }
+
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:title
+                                                                        message:message
                                                                  preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
     [controller addAction:okAction];
@@ -390,15 +398,19 @@
 }
 
 - (IBAction)addMyoTapped:(UIButton *)sender {
-    UINavigationController *settingsNavController = [TLMSettingsViewController settingsInNavigationController];
-    settingsNavController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-    settingsNavController.navigationBar.translucent = NO;
-    settingsNavController.modalPresentationStyle = UIModalPresentationFormSheet;
-    settingsNavController.navigationBar.tintColor = [UIColor colorWithRed:0.0/255.0
-                                                                    green:188.0/255.0
-                                                                     blue:221.0/255.0
-                                                                    alpha:1.0];
-    [self presentViewController:settingsNavController animated:YES completion:nil];
+    if ([sender isSelected]) {
+        [[TLMHub sharedHub] detachFromMyo:self.myo];
+    } else {
+        UINavigationController *settingsNavController = [TLMSettingsViewController settingsInNavigationController];
+        settingsNavController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+        settingsNavController.navigationBar.translucent = NO;
+        settingsNavController.modalPresentationStyle = UIModalPresentationFormSheet;
+        settingsNavController.navigationBar.tintColor = [UIColor colorWithRed:0.0/255.0
+                                                                        green:188.0/255.0
+                                                                         blue:221.0/255.0
+                                                                        alpha:1.0];
+        [self presentViewController:settingsNavController animated:YES completion:nil];
+    }
 }
 
 @end
