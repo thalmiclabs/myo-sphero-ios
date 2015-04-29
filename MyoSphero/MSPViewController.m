@@ -389,12 +389,11 @@
         message = @"Sphero can be disconnected in the iOS Settings app. Go to Settings > Bluetooth, tap the \"i\" icon next to Sphero in the list of devices, and tap \"Forget Device\".";
     }
 
-    UIAlertController *controller = [UIAlertController alertControllerWithTitle:title
-                                                                        message:message
-                                                                 preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    [controller addAction:okAction];
-    [self presentViewController:controller animated:YES completion:nil];
+    [[[UIAlertView alloc] initWithTitle:title
+                                message:message
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
 }
 
 - (IBAction)addMyoTapped:(UIButton *)sender {
