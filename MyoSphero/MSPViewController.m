@@ -36,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *addSpheroButton;
 @property (weak, nonatomic) IBOutlet UIButton *addMyoButton;
 @property (weak, nonatomic) IBOutlet UIImageView *spheroImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *spheroConnectedImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *myoImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *spheroCheckmark;
 @property (weak, nonatomic) IBOutlet UIImageView *myoCheckmark;
@@ -128,11 +129,15 @@
 
     BOOL spheroConnected = self.robotControl != nil;
     BOOL myoConnected = self.myo != nil && self.myo.state == TLMMyoConnectionStateConnected;
+    BOOL bothConnected = spheroConnected && myoConnected;
 
     // Visibility
     [self.addSpheroButton setSelected:spheroConnected];
     [self.spheroCheckmark setHidden:!spheroConnected];
     [self.spheroImageView setHighlighted:spheroConnected];
+    [self.spheroImageView setHidden:bothConnected];
+    [self.spheroConnectedImageView setHidden:!bothConnected];
+    [self.spheroConnectedImageView setHighlighted:!self.isCalibrating];
     [self.spheroStateLabel setHidden:!spheroConnected];
 
     [self.addMyoButton setSelected:myoConnected];
@@ -156,12 +161,12 @@
         [self.myoStateLabel setText:@"MYO SYNCED"];
     }
     if (myoConnected) {
-        [self.myoLabel setText:self.myo.name];
+        [self.myoLabel setText:self.myo.name.uppercaseString];
     } else {
         [self.myoLabel setText:@"CONNECT MYO..."];
     }
     if (spheroConnected) {
-        [self.spheroLabel setText:self.robotControl.robot.name];
+        [self.spheroLabel setText:self.robotControl.robot.name.uppercaseString];
     } else {
         [self.spheroLabel setText:@"CONNECT SPHERO..."];
     }

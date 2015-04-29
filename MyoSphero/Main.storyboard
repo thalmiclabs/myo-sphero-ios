@@ -18,22 +18,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gcy-Fu-9sR">
-                                <rect key="frame" x="150" y="87" width="300" height="361"/>
+                                <rect key="frame" x="150" y="64" width="300" height="408"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sphero_faded" highlightedImage="sphero" translatesAutoresizingMaskIntoConstraints="NO" id="9dm-QP-Gj4">
-                                        <rect key="frame" x="95" y="8" width="110" height="110"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sphero_faded" highlightedImage="sphero" translatesAutoresizingMaskIntoConstraints="NO" id="9dm-QP-Gj4" userLabel="spheroImageView">
+                                        <rect key="frame" x="95" y="30" width="110" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110" id="VAB-lq-Qs6"/>
+                                            <constraint firstAttribute="height" constant="110" id="cPq-o9-usQ"/>
+                                        </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="myo_faded" highlightedImage="myo" translatesAutoresizingMaskIntoConstraints="NO" id="U4b-BV-gld">
-                                        <rect key="frame" x="95" y="202" width="110" height="110"/>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="callibrate_sphero" highlightedImage="drive-mode" translatesAutoresizingMaskIntoConstraints="NO" id="u41-gd-eAz" userLabel="spheroConnectedImageView">
+                                        <rect key="frame" x="73" y="8" width="154" height="132"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="154" id="5tL-Vk-GP8"/>
+                                            <constraint firstAttribute="height" constant="132" id="m7A-nD-VEb"/>
+                                        </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONNECT SPHERO..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI0-LI-KlM">
-                                        <rect key="frame" x="8" y="126" width="284" height="21"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4G-xW-fdz">
-                                        <rect key="frame" x="213" y="8" width="50" height="50"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="synced_checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="h4c-2h-TFB" userLabel="spheroCheckmark">
+                                        <rect key="frame" x="95" y="30" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="TQb-Nz-RdJ"/>
+                                            <constraint firstAttribute="height" constant="24" id="vnr-m3-P3e"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4G-xW-fdz" userLabel="addSpheroButton">
+                                        <rect key="frame" x="213" y="30" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="kMT-WJ-eAs"/>
+                                            <constraint firstAttribute="width" constant="50" id="tqm-bC-6OX"/>
+                                        </constraints>
                                         <state key="normal" image="add_button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -42,8 +55,51 @@
                                             <action selector="addSpheroTapped:" destination="xNC-1E-zeA" eventType="touchUpInside" id="Hji-NX-0Lu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWd-9Z-Vdu">
-                                        <rect key="frame" x="213" y="202" width="50" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONNECT SPHERO..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI0-LI-KlM" userLabel="spheroLabel">
+                                        <rect key="frame" x="8" y="148" width="284" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="ldN-xs-cDx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="READY TO CALIBRATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSL-Xe-LuZ" userLabel="spheroStateLabel">
+                                        <rect key="frame" x="8" y="169" width="284" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="nkN-Ik-pa3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="connected_dots" translatesAutoresizingMaskIntoConstraints="NO" id="oAk-YT-g48">
+                                        <rect key="frame" x="144" y="201" width="12" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="5Jr-oG-hdV"/>
+                                            <constraint firstAttribute="height" constant="28" id="geT-Un-iuo"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myo_faded" highlightedImage="myo" translatesAutoresizingMaskIntoConstraints="NO" id="U4b-BV-gld" userLabel="myoImageView">
+                                        <rect key="frame" x="95" y="240" width="110" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="110" id="Drw-Ub-o0G"/>
+                                            <constraint firstAttribute="width" constant="110" id="RDE-wD-KoB"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="synced_checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="fas-P5-8dY" userLabel="myoCheckmark">
+                                        <rect key="frame" x="95" y="240" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="ALH-TR-aRS"/>
+                                            <constraint firstAttribute="width" constant="24" id="Nb6-2X-b5T"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWd-9Z-Vdu" userLabel="addMyoButton">
+                                        <rect key="frame" x="213" y="240" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="tp3-CY-Vdw"/>
+                                            <constraint firstAttribute="width" constant="50" id="wIE-PW-wjk"/>
+                                        </constraints>
                                         <state key="normal" image="add_button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -52,29 +108,20 @@
                                             <action selector="addMyoTapped:" destination="xNC-1E-zeA" eventType="touchUpInside" id="mqx-go-KKz"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="synced_checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="fas-P5-8dY">
-                                        <rect key="frame" x="95" y="202" width="24" height="24"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="synced_checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="h4c-2h-TFB">
-                                        <rect key="frame" x="95" y="8" width="24" height="24"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="READY TO CALIBRATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSL-Xe-LuZ">
-                                        <rect key="frame" x="8" y="141" width="284" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONNECT MYO..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjj-IV-OdE" userLabel="myoLabel">
+                                        <rect key="frame" x="8" y="358" width="284" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="PS0-Gr-Ung"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="connected_dots" translatesAutoresizingMaskIntoConstraints="NO" id="oAk-YT-g48">
-                                        <rect key="frame" x="144" y="164" width="12" height="28"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONNECT MYO..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjj-IV-OdE">
-                                        <rect key="frame" x="60" y="320" width="180" height="21"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PERFORM SYNC GESTURE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTG-Ri-BOJ">
-                                        <rect key="frame" x="8" y="335" width="284" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PERFORM SYNC GESTURE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTG-Ri-BOJ" userLabel="myoStateLabel">
+                                        <rect key="frame" x="8" y="379" width="284" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="cUf-LB-ACG"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -82,9 +129,47 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="aFU-yF-atc"/>
-                                    <constraint firstAttribute="height" constant="361" id="f8f-8t-R0c"/>
+                                    <constraint firstItem="U4b-BV-gld" firstAttribute="top" secondItem="aWd-9Z-Vdu" secondAttribute="top" id="0ED-Vo-WFL"/>
+                                    <constraint firstItem="u41-gd-eAz" firstAttribute="top" secondItem="Gcy-Fu-9sR" secondAttribute="top" constant="8" id="1Lf-Ph-jSc"/>
+                                    <constraint firstAttribute="centerX" secondItem="u41-gd-eAz" secondAttribute="centerX" id="2c3-gO-aje"/>
+                                    <constraint firstItem="9dm-QP-Gj4" firstAttribute="top" secondItem="B4G-xW-fdz" secondAttribute="top" id="50t-IW-Uqr"/>
+                                    <constraint firstItem="pSL-Xe-LuZ" firstAttribute="leading" secondItem="Gcy-Fu-9sR" secondAttribute="leading" constant="8" id="5mQ-w0-ChS"/>
+                                    <constraint firstItem="wjj-IV-OdE" firstAttribute="top" secondItem="U4b-BV-gld" secondAttribute="bottom" constant="8" id="6iE-oc-51T"/>
+                                    <constraint firstItem="WI0-LI-KlM" firstAttribute="top" secondItem="9dm-QP-Gj4" secondAttribute="bottom" constant="8" id="8mC-VS-cMn"/>
+                                    <constraint firstAttribute="trailing" secondItem="pSL-Xe-LuZ" secondAttribute="trailing" constant="8" id="CuZ-V8-lfd"/>
+                                    <constraint firstItem="U4b-BV-gld" firstAttribute="top" secondItem="pSL-Xe-LuZ" secondAttribute="bottom" constant="50" id="DoL-s6-Rzj"/>
+                                    <constraint firstAttribute="width" constant="300" id="G2R-Jb-gf4"/>
+                                    <constraint firstItem="9dm-QP-Gj4" firstAttribute="top" secondItem="h4c-2h-TFB" secondAttribute="top" id="IEL-RS-vNT"/>
+                                    <constraint firstItem="qTG-Ri-BOJ" firstAttribute="leading" secondItem="Gcy-Fu-9sR" secondAttribute="leading" constant="8" id="J9O-bi-AIU"/>
+                                    <constraint firstAttribute="centerX" secondItem="qTG-Ri-BOJ" secondAttribute="centerX" id="JJw-7P-GKx"/>
+                                    <constraint firstItem="qTG-Ri-BOJ" firstAttribute="top" secondItem="wjj-IV-OdE" secondAttribute="bottom" id="Jby-4F-a1z"/>
+                                    <constraint firstItem="9dm-QP-Gj4" firstAttribute="bottom" secondItem="u41-gd-eAz" secondAttribute="bottom" id="K16-35-6sM"/>
+                                    <constraint firstAttribute="centerY" secondItem="oAk-YT-g48" secondAttribute="centerY" constant="-11" id="Nz8-Xf-tQd"/>
+                                    <constraint firstAttribute="bottom" secondItem="qTG-Ri-BOJ" secondAttribute="bottom" constant="8" id="Qa7-Dj-alQ"/>
+                                    <constraint firstItem="B4G-xW-fdz" firstAttribute="leading" secondItem="9dm-QP-Gj4" secondAttribute="trailing" constant="8" id="SyE-xv-kO4"/>
+                                    <constraint firstAttribute="centerX" secondItem="U4b-BV-gld" secondAttribute="centerX" id="TnM-AB-Wia"/>
+                                    <constraint firstAttribute="trailing" secondItem="wjj-IV-OdE" secondAttribute="trailing" constant="8" id="Ud7-uT-i07"/>
+                                    <constraint firstItem="U4b-BV-gld" firstAttribute="top" secondItem="fas-P5-8dY" secondAttribute="top" id="Vr9-l6-YeJ"/>
+                                    <constraint firstAttribute="centerX" secondItem="WI0-LI-KlM" secondAttribute="centerX" id="Z1L-VS-1Yg"/>
+                                    <constraint firstAttribute="trailing" secondItem="qTG-Ri-BOJ" secondAttribute="trailing" constant="8" id="ZDL-x4-VF0"/>
+                                    <constraint firstAttribute="centerX" secondItem="oAk-YT-g48" secondAttribute="centerX" id="ZZV-ov-KNw"/>
+                                    <constraint firstAttribute="centerX" secondItem="9dm-QP-Gj4" secondAttribute="centerX" id="fVD-l0-IUI"/>
+                                    <constraint firstItem="wjj-IV-OdE" firstAttribute="leading" secondItem="Gcy-Fu-9sR" secondAttribute="leading" constant="8" id="jEU-X0-MVA"/>
+                                    <constraint firstItem="9dm-QP-Gj4" firstAttribute="leading" secondItem="h4c-2h-TFB" secondAttribute="leading" id="nhe-qu-jSI"/>
+                                    <constraint firstItem="aWd-9Z-Vdu" firstAttribute="leading" secondItem="U4b-BV-gld" secondAttribute="trailing" constant="8" id="ofu-pu-LWz"/>
+                                    <constraint firstItem="U4b-BV-gld" firstAttribute="leading" secondItem="fas-P5-8dY" secondAttribute="leading" id="pZj-sB-cos"/>
+                                    <constraint firstItem="WI0-LI-KlM" firstAttribute="leading" secondItem="Gcy-Fu-9sR" secondAttribute="leading" constant="8" id="qeg-4z-hfp"/>
+                                    <constraint firstAttribute="centerX" secondItem="pSL-Xe-LuZ" secondAttribute="centerX" id="qwR-NZ-RyU"/>
+                                    <constraint firstItem="pSL-Xe-LuZ" firstAttribute="top" secondItem="WI0-LI-KlM" secondAttribute="bottom" id="s6x-z2-kfm"/>
+                                    <constraint firstAttribute="trailing" secondItem="WI0-LI-KlM" secondAttribute="trailing" constant="8" id="vEU-y1-udG"/>
+                                    <constraint firstAttribute="centerX" secondItem="wjj-IV-OdE" secondAttribute="centerX" id="w4m-s9-uCG"/>
+                                    <constraint firstItem="9dm-QP-Gj4" firstAttribute="top" secondItem="Gcy-Fu-9sR" secondAttribute="top" constant="24" id="zlM-tl-xXw"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="zlM-tl-xXw"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -109,6 +194,7 @@
                         <outlet property="myoLabel" destination="wjj-IV-OdE" id="ZNb-Gb-TTw"/>
                         <outlet property="myoStateLabel" destination="qTG-Ri-BOJ" id="RNG-Da-s3z"/>
                         <outlet property="spheroCheckmark" destination="h4c-2h-TFB" id="AzE-ZS-LDu"/>
+                        <outlet property="spheroConnectedImageView" destination="u41-gd-eAz" id="aVv-Ba-202"/>
                         <outlet property="spheroImageView" destination="9dm-QP-Gj4" id="KP6-iv-wZk"/>
                         <outlet property="spheroLabel" destination="WI0-LI-KlM" id="bTd-cE-lfW"/>
                         <outlet property="spheroStateLabel" destination="pSL-Xe-LuZ" id="bpJ-rQ-2cH"/>
@@ -187,8 +273,10 @@
     </scenes>
     <resources>
         <image name="add_button" width="50" height="50"/>
+        <image name="callibrate_sphero" width="154" height="132"/>
         <image name="close_button" width="50" height="50"/>
         <image name="connected_dots" width="12" height="28"/>
+        <image name="drive-mode" width="154" height="132"/>
         <image name="instruction_icon" width="30" height="19"/>
         <image name="myo" width="114" height="123"/>
         <image name="myo_faded" width="114" height="123"/>
