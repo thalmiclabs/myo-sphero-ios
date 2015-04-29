@@ -381,7 +381,12 @@
 #pragma mark - IBAction Methods
 
 - (IBAction)addSpheroTapped:(UIButton *)sender {
-
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Connect Sphero"
+                                                                        message:@"Connect Sphero in the iOS Settings app. Go to Settings > Bluetooth and tap on Sphero in the list of devices."
+                                                                 preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [controller addAction:okAction];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 - (IBAction)addMyoTapped:(UIButton *)sender {

@@ -24,6 +24,7 @@
 		4D92999617E7A81200C52D68 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D92999517E7A81200C52D68 /* Images.xcassets */; };
 		4D9299C317E7ABA500C52D68 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9299C217E7ABA500C52D68 /* SystemConfiguration.framework */; };
 		4DA163B018A2F4FD00D498B7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA163AF18A2F4FD00D498B7 /* AudioToolbox.framework */; };
+		543B1BD41AF120A900EF7897 /* MSPMyoPersister.m in Sources */ = {isa = PBXBuildFile; fileRef = 543B1BD31AF120A900EF7897 /* MSPMyoPersister.m */; };
 		54919EBE1A13DE0A00D3A823 /* MSPLookAndFeel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54919EBD1A13DE0A00D3A823 /* MSPLookAndFeel.m */; };
 		54919EC31A150C1300D3A823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54919EC21A150C1300D3A823 /* Main.storyboard */; };
 		54919EC71A15144E00D3A823 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 54919EC61A15144E00D3A823 /* libstdc++.6.dylib */; };
@@ -54,6 +55,8 @@
 		4D92999C17E7A81200C52D68 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4D9299C217E7ABA500C52D68 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4DA163AF18A2F4FD00D498B7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		543B1BD21AF120A900EF7897 /* MSPMyoPersister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPMyoPersister.h; sourceTree = "<group>"; };
+		543B1BD31AF120A900EF7897 /* MSPMyoPersister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPMyoPersister.m; sourceTree = "<group>"; };
 		54919EBC1A13DE0A00D3A823 /* MSPLookAndFeel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPLookAndFeel.h; sourceTree = "<group>"; };
 		54919EBD1A13DE0A00D3A823 /* MSPLookAndFeel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPLookAndFeel.m; sourceTree = "<group>"; };
 		54919EC21A150C1300D3A823 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				4D92997E17E7A81200C52D68 /* MSPAppDelegate.m */,
 				4D92998C17E7A81200C52D68 /* MSPViewController.h */,
 				4D92998D17E7A81200C52D68 /* MSPViewController.m */,
+				543B1BD21AF120A900EF7897 /* MSPMyoPersister.h */,
+				543B1BD31AF120A900EF7897 /* MSPMyoPersister.m */,
 				54919EC21A150C1300D3A823 /* Main.storyboard */,
 				54919EBC1A13DE0A00D3A823 /* MSPLookAndFeel.h */,
 				54919EBD1A13DE0A00D3A823 /* MSPLookAndFeel.m */,
@@ -233,6 +238,7 @@
 				4D92998E17E7A81200C52D68 /* MSPViewController.m in Sources */,
 				4D92997F17E7A81200C52D68 /* MSPAppDelegate.m in Sources */,
 				54919EBE1A13DE0A00D3A823 /* MSPLookAndFeel.m in Sources */,
+				543B1BD41AF120A900EF7897 /* MSPMyoPersister.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

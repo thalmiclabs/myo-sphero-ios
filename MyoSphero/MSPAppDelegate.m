@@ -8,17 +8,27 @@
 
 #import "MSPAppDelegate.h"
 #import "MSPViewController.h"
+#import "MSPMyoPersister.h"
 #import <MyoKit/MyoKit.h>
 
 @implementation MSPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    // Helps launch faster.
+    [self performSelector:@selector(delayedApplicationDidFinishLaunchingWithOptions:)
+               withObject:launchOptions
+               afterDelay:0.1];
+
+    return YES;
+}
+
+- (void)delayedApplicationDidFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    [MSPMyoPersister instance];
     [[TLMHub sharedHub] setApplicationIdentifier:@"com.thalmic.ios.Myo-Sphero"];
     [[TLMHub sharedHub] setShouldNotifyInBackground:YES];
     [[TLMHub sharedHub] setLockingPolicy:TLMLockingPolicyNone];
-
-    return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application {
