@@ -216,22 +216,22 @@
                         <sections>
                             <tableViewSection id="ncV-M4-iMD">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="185" id="R44-L7-AyD">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="205" id="R44-L7-AyD">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R44-L7-AyD" id="02x-2V-pK7">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01-illustration" translatesAutoresizingMaskIntoConstraints="NO" id="DCz-eq-XFg">
-                                                    <rect key="frame" x="166" y="24" width="269" height="100"/>
+                                                    <rect key="frame" x="166" y="24" width="269" height="120"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="269" id="ltO-H4-PDP"/>
-                                                        <constraint firstAttribute="height" constant="100" id="vl0-3u-Y11"/>
+                                                        <constraint firstAttribute="height" constant="120" id="vl0-3u-Y11"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upk-Ri-xfQ">
-                                                    <rect key="frame" x="182" y="119" width="235" height="57"/>
+                                                    <rect key="frame" x="160" y="139" width="280" height="57"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="235" id="0e6-V2-6Nn"/>
+                                                        <constraint firstAttribute="width" constant="280" id="0e6-V2-6Nn"/>
                                                         <constraint firstAttribute="height" constant="57" id="maY-ah-EkR"/>
                                                     </constraints>
                                                     <attributedString key="attributedText">
@@ -321,9 +321,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tQ-Ni-tqZ">
-                                                    <rect key="frame" x="183" y="147" width="235" height="57"/>
+                                                    <rect key="frame" x="160" y="147" width="280" height="57"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="235" id="9m1-Mi-L3g"/>
+                                                        <constraint firstAttribute="width" constant="280" id="9m1-Mi-L3g"/>
                                                         <constraint firstAttribute="height" constant="57" id="KZ7-Gl-hRB"/>
                                                     </constraints>
                                                     <attributedString key="attributedText">
@@ -396,9 +396,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEW-LQ-BkI">
-                                                    <rect key="frame" x="182" y="147" width="235" height="38"/>
+                                                    <rect key="frame" x="160" y="147" width="280" height="38"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="235" id="fO7-oa-QYz"/>
+                                                        <constraint firstAttribute="width" constant="280" id="fO7-oa-QYz"/>
                                                         <constraint firstAttribute="height" constant="38" id="opB-0K-2cL"/>
                                                     </constraints>
                                                     <attributedString key="attributedText">
@@ -444,23 +444,23 @@
                             </tableViewSection>
                             <tableViewSection id="GNa-3r-u7Q">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="2nB-8H-egp">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="317" id="2nB-8H-egp">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2nB-8H-egp" id="myo-9O-IyZ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="04-pro tip" translatesAutoresizingMaskIntoConstraints="NO" id="SnX-YZ-ADW">
-                                                    <rect key="frame" x="164" y="24" width="271" height="173"/>
+                                                    <rect key="frame" x="164" y="24" width="271" height="200"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="271" id="kgy-ar-srE"/>
-                                                        <constraint firstAttribute="height" constant="173" id="ojy-8c-P3q"/>
+                                                        <constraint firstAttribute="height" constant="200" id="ojy-8c-P3q"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N28-q9-Qkr">
-                                                    <rect key="frame" x="182" y="196" width="235" height="95"/>
+                                                    <rect key="frame" x="160" y="228" width="280" height="80"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="235" id="G7j-Nf-xhq"/>
-                                                        <constraint firstAttribute="height" constant="95" id="H36-bB-Yo6"/>
+                                                        <constraint firstAttribute="width" constant="280" id="G7j-Nf-xhq"/>
+                                                        <constraint firstAttribute="height" constant="80" id="H36-bB-Yo6"/>
                                                     </constraints>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Picture your forearm as a flat plane that you have to balance Sphero on. Point down to move Sphero ">
@@ -560,9 +560,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54u-fu-jRA">
-                                                    <rect key="frame" x="182" y="147" width="235" height="38"/>
+                                                    <rect key="frame" x="160" y="147" width="280" height="38"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="235" id="8qs-8O-vVQ"/>
+                                                        <constraint firstAttribute="width" constant="280" id="8qs-8O-vVQ"/>
                                                     </constraints>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Double tap to ">
@@ -672,11 +672,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="01-illustration" width="269" height="100"/>
+        <image name="01-illustration" width="269" height="120"/>
         <image name="02-illustration" width="244" height="128"/>
         <image name="03-illustration" width="245" height="128"/>
         <image name="04-illustration" width="243" height="128"/>
-        <image name="04-pro tip" width="271" height="173"/>
+        <image name="04-pro tip" width="271" height="200"/>
         <image name="add_button" width="50" height="50"/>
         <image name="callibrate_sphero" width="154" height="132"/>
         <image name="close_button" width="50" height="50"/>
