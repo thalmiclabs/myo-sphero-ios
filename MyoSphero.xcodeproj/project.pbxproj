@@ -28,6 +28,7 @@
 		543B1BD81AF12C3B00EF7897 /* MSPDismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 543B1BD71AF12C3B00EF7897 /* MSPDismissSegue.m */; };
 		543B1BDB1AF1697F00EF7897 /* MSPRoundedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 543B1BDA1AF1697F00EF7897 /* MSPRoundedLabel.m */; };
 		543B1BDE1AF1B33200EF7897 /* MSPRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 543B1BDD1AF1B33200EF7897 /* MSPRoundedView.m */; };
+		543B1BE41AF1CC2700EF7897 /* MSPSpheroDriveAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 543B1BE31AF1CC2700EF7897 /* MSPSpheroDriveAlgorithm.m */; };
 		54919EBE1A13DE0A00D3A823 /* MSPLookAndFeel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54919EBD1A13DE0A00D3A823 /* MSPLookAndFeel.m */; };
 		54919EC31A150C1300D3A823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54919EC21A150C1300D3A823 /* Main.storyboard */; };
 		54919EC71A15144E00D3A823 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 54919EC61A15144E00D3A823 /* libstdc++.6.dylib */; };
@@ -66,6 +67,8 @@
 		543B1BDA1AF1697F00EF7897 /* MSPRoundedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPRoundedLabel.m; sourceTree = "<group>"; };
 		543B1BDC1AF1B33200EF7897 /* MSPRoundedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPRoundedView.h; sourceTree = "<group>"; };
 		543B1BDD1AF1B33200EF7897 /* MSPRoundedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPRoundedView.m; sourceTree = "<group>"; };
+		543B1BE21AF1CC2700EF7897 /* MSPSpheroDriveAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPSpheroDriveAlgorithm.h; sourceTree = "<group>"; };
+		543B1BE31AF1CC2700EF7897 /* MSPSpheroDriveAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPSpheroDriveAlgorithm.m; sourceTree = "<group>"; };
 		54919EBC1A13DE0A00D3A823 /* MSPLookAndFeel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPLookAndFeel.h; sourceTree = "<group>"; };
 		54919EBD1A13DE0A00D3A823 /* MSPLookAndFeel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPLookAndFeel.m; sourceTree = "<group>"; };
 		54919EC21A150C1300D3A823 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				4D92997E17E7A81200C52D68 /* MSPAppDelegate.m */,
 				4D92998C17E7A81200C52D68 /* MSPViewController.h */,
 				4D92998D17E7A81200C52D68 /* MSPViewController.m */,
+				543B1BE21AF1CC2700EF7897 /* MSPSpheroDriveAlgorithm.h */,
+				543B1BE31AF1CC2700EF7897 /* MSPSpheroDriveAlgorithm.m */,
 				543B1BD21AF120A900EF7897 /* MSPMyoPersister.h */,
 				543B1BD31AF120A900EF7897 /* MSPMyoPersister.m */,
 				543B1BD61AF12C3B00EF7897 /* MSPDismissSegue.h */,
@@ -254,6 +259,7 @@
 				4D92997F17E7A81200C52D68 /* MSPAppDelegate.m in Sources */,
 				54919EBE1A13DE0A00D3A823 /* MSPLookAndFeel.m in Sources */,
 				543B1BD41AF120A900EF7897 /* MSPMyoPersister.m in Sources */,
+				543B1BE41AF1CC2700EF7897 /* MSPSpheroDriveAlgorithm.m in Sources */,
 				543B1BD81AF12C3B00EF7897 /* MSPDismissSegue.m in Sources */,
 				543B1BDB1AF1697F00EF7897 /* MSPRoundedLabel.m in Sources */,
 				543B1BDE1AF1B33200EF7897 /* MSPRoundedView.m in Sources */,
