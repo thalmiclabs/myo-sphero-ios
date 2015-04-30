@@ -25,6 +25,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *myoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *spheroStateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *myoStateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *fistAndRotateIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *spreadFingersIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *panIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *doubleTapIcon;
 
 @end
 
@@ -98,6 +102,23 @@
 
 - (void)didUpdateState {
     [self updateUIForMyoState];
+}
+
+- (void)didMakeInputType:(InputType)type isBeginning:(BOOL)isBeginning {
+    switch (type) {
+        case InputTypeFistTwist:
+            [self.fistAndRotateIcon setHighlighted:isBeginning];
+            break;
+        case InputTypeFingersSpread:
+            [self.spreadFingersIcon setHighlighted:isBeginning];
+            break;
+        case InputTypePan:
+            [self.panIcon setHighlighted:isBeginning];
+            break;
+        case InputTypeDoubleTap:
+            [self.doubleTapIcon setHighlighted:isBeginning];
+            break;
+    }
 }
 
 #pragma mark - IBAction Methods
