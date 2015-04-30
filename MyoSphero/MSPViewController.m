@@ -25,6 +25,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *myoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *spheroStateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *myoStateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *fistAndRotateIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *spreadFingersIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *panIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *doubleTapIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *connectedDots;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *iconSpacingConstraint;
 
 @end
 
@@ -32,11 +38,19 @@
 
 #pragma mark - View Lifecycle
 
--(void)viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.driveAlgorithm = [[MSPSpheroDriveAlgorithm alloc] init];
     self.driveAlgorithm.delegate = self;
     [self updateUIForMyoState];
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    if ([self is3Point5InchScreen]) {
+        [self.connectedDots setHidden:YES];
+        [self.iconSpacingConstraint setConstant:10];
+    }
 }
 
 #pragma mark - Instance Methods
@@ -88,6 +102,11 @@
     }
 }
 
+- (BOOL)is3Point5InchScreen {
+    UIScreen *screen = [UIScreen mainScreen];
+    return screen.bounds.size.height < 568;
+}
+
 #pragma mark - Myo Methods
 
 - (TLMMyo *)myo {
@@ -98,6 +117,23 @@
 
 - (void)didUpdateState {
     [self updateUIForMyoState];
+}
+
+- (void)didMakeInputType:(InputType)type isBeginning:(BOOL)isBeginning {
+    switch (type) {
+        case InputTypeFistTwist:
+            [self.fistAndRotateIcon setHighlighted:isBeginning];
+            break;
+        case InputTypeFingersSpread:
+            [self.spreadFingersIcon setHighlighted:isBeginning];
+            break;
+        case InputTypePan:
+            [self.panIcon setHighlighted:isBeginning];
+            break;
+        case InputTypeDoubleTap:
+            [self.doubleTapIcon setHighlighted:isBeginning];
+            break;
+    }
 }
 
 #pragma mark - IBAction Methods

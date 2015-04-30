@@ -8,9 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, InputType) {
+    InputTypeFistTwist,
+    InputTypeFingersSpread,
+    InputTypePan,
+    InputTypeDoubleTap
+};
+
 @protocol MSPSpheroDriveAlgorithmDelegate <NSObject>
 
 - (void)didUpdateState;
+- (void)didMakeInputType:(InputType)type isBeginning:(BOOL)isBeginning;
 
 @end
 

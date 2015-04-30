@@ -216,6 +216,7 @@
 - (void)didReceiveOrientation:(NSNotification*)notification {
 
     if (![self myoConnected] || ![self spheroConnected]) {
+        [self.delegate didMakeInputType:InputTypePan isBeginning:NO];
         return;
     }
 
@@ -236,6 +237,10 @@
 
     heading -= self.relativeYaw;
 
+    if (velocity < 0.1) {
+        [self.delegate didMakeInputType:InputTypePan isBeginning:NO];
+    }
+
     //bound the headings
     if (heading < 0) heading += 360;
     if (heading > 360) heading -= 360;
@@ -247,12 +252,17 @@
             while (self.calibrationHeading < 0) self.calibrationHeading += 360;
             while (self.calibrationHeading > 360) self.calibrationHeading -= 360;
 
+            // This is the proper way of setting the calibration command, but it doesn't seem to work.
             //RKSetHeadingCommand *command = [RKSetHeadingCommand commandWithHeading:self.calibrationHeading];
             //[self.robot sendCommand:command];
+
             [self.robot driveWithHeading:self.calibrationHeading andVelocity:0.0];
         }
     } else {
         [self.robot driveWithHeading:heading andVelocity:velocity];
+        if (velocity > 0.1) {
+            [self.delegate didMakeInputType:InputTypePan isBeginning:YES];
+        }
     }
 }
 
@@ -279,7 +289,10 @@
                     [self shouldCalibrateRobot:!self.isCalibrating];
                     [self.myo indicateUserAction];
                     self.referenceEulerAngles = [TLMEulerAngles anglesWithQuaternion:self.myo.orientation.quaternion];
+                    [self.delegate didMakeInputType:InputTypeDoubleTap isBeginning:YES];
                 }
+            } else {
+                [self.delegate didMakeInputType:InputTypeDoubleTap isBeginning:NO];
             }
             break;
         case TLMPoseTypeFingersSpread:
@@ -288,15 +301,20 @@
                     [self shouldCalibrateRobot:!self.isCalibrating];
                     [self.myo indicateUserAction];
                     self.referenceEulerAngles = [TLMEulerAngles anglesWithQuaternion:self.myo.orientation.quaternion];
+                    [self.delegate didMakeInputType:InputTypeFingersSpread isBeginning:YES];
                 }
+            } else {
+                [self.delegate didMakeInputType:InputTypeFingersSpread isBeginning:NO];
             }
             break;
         case TLMPoseTypeFist:
             if (self.isCalibrating) {
                 if (isBeginning) {
                     self.referenceEulerAngles = [TLMEulerAngles anglesWithQuaternion:self.myo.orientation.quaternion];
+                    [self.delegate didMakeInputType:InputTypeFistTwist isBeginning:YES];
                 } else {
                     self.lastCalibrationHeading = self.calibrationHeading;
+                    [self.delegate didMakeInputType:InputTypeFistTwist isBeginning:NO];
                 }
                 // Indicate user action for both beginning and end of fist.
                 [self.myo indicateUserAction];
