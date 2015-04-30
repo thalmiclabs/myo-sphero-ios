@@ -130,7 +130,7 @@
     [self.delegate didUpdateState];
 }
 
--(void)setupRobotConnection {
+- (void)setupRobotConnection {
     /*Try to connect to the robot*/
     // If this doesn't work, try isRobotAvailable
     if ([[RKRobotProvider sharedRobotProvider] isRobotAvailable] && ![[RKRobotProvider sharedRobotProvider] isRobotConnected]) {
@@ -141,7 +141,7 @@
 - (void)closeRobotConnection {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self setRobotGlowColor:[UIColor whiteColor]];
-    if([self.robotControl calibrating]) {
+    if ([self.robotControl calibrating]) {
         [self.robotControl stopCalibrated:YES];
     }
     self.robotControl = nil;
@@ -167,11 +167,11 @@
 }
 
 - (void)shouldCalibrateRobot:(BOOL)shouldCalibrate {
-    if(!self.isCalibrating && shouldCalibrate) {
+    if (!self.isCalibrating && shouldCalibrate) {
         [self.robotControl startCalibration];
         [self setRobotGlowColor:[MSPLookAndFeel calibrationYellow]];
         [self.robotControl rollAtHeading:self.calibrationHeading velocity:0.0];
-    } else if(self.isCalibrating && !shouldCalibrate) {
+    } else if (self.isCalibrating && !shouldCalibrate) {
         [self.robotControl stopCalibrated:YES];
         [self setRobotGlowColor:[MSPLookAndFeel thalmicBlue]];
     }
@@ -224,7 +224,7 @@
 
 - (void)didReceiveOrientation:(NSNotification*)notification {
 
-    if(!self.myo || !self.robotControl) {
+    if (!self.myo || !self.robotControl) {
         return;
     }
 
@@ -237,19 +237,19 @@
     double heading = atan(inputRoll/inputPitch)*180/M_PI;
     double velocity = sqrt(inputRoll*inputRoll + inputPitch*inputPitch)/2;
 
-    if(velocity > 0.55) velocity = 0;
+    if (velocity > 0.55) velocity = 0;
     velocity = MIN(MAX(velocity, 0.0), 0.5);
-    if(velocity < 0.10) velocity = 0;
+    if (velocity < 0.10) velocity = 0;
 
-    if(inputPitch < 0) heading += 180;
+    if (inputPitch < 0) heading += 180;
 
     heading -= self.relativeYaw;
 
     //bound the headings
-    if(heading < 0) heading += 360;
-    if(heading > 360) heading -= 360;
+    if (heading < 0) heading += 360;
+    if (heading > 360) heading -= 360;
 
-    if(self.isCalibrating) {
+    if (self.isCalibrating) {
         if (self.myo.pose.type == TLMPoseTypeFist) {
             self.calibrationHeading = (self.relativeRoll * 3) + self.lastCalibrationHeading;
 
@@ -275,7 +275,7 @@
 
 - (void)didReceivePose:(TLMPoseType)poseType isBeginning:(BOOL)isBeginning {
 
-    if(!self.myo || !self.robotControl) {
+    if (!self.myo || !self.robotControl) {
         return;
     }
 
