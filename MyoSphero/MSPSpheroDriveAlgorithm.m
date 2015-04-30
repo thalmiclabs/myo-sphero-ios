@@ -8,9 +8,8 @@
 
 #import "MSPSpheroDriveAlgorithm.h"
 #import "MSPLookAndFeel.h"
-#import "RobotKit/RobotKit.h"
-#import "RobotUIKit/RobotUIKit.h"
-#import "RobotKit/RKRobotControl.h"
+#import <RobotKit/RobotKit.h>
+#import <RobotUIKit/RobotUIKit.h>
 #import <MyoKit/MyoKit.h>
 
 @interface MSPSpheroDriveAlgorithm()
@@ -22,7 +21,8 @@
 @property (nonatomic, readwrite) double calibrationHeading;
 @property (nonatomic, readwrite) double lastCalibrationHeading;
 
-@property (nonatomic, strong) RKRobotControl *robotControl;
+@property (atomic, strong) RKConvenienceRobot *robot;
+@property (nonatomic, readwrite) BOOL isCalibrating;
 @property (nonatomic, readonly) TLMMyo *myo;
 @property (nonatomic, strong) TLMPose *lastPose;
 
@@ -36,7 +36,8 @@
     self = [super init];
     if (self) {
         [self setupNotifications];
-        [self setupRobotConnection];
+        [[RKRobotDiscoveryAgent sharedAgent] setMaxConnectedRobots:1];
+        [RKRobotDiscoveryAgent startDiscovery];
     }
     return  self;
 }
@@ -44,18 +45,17 @@
 #pragma mark - App Lifecycle 
 
 - (void)appWillEnterForeground {
-    [self setupRobotConnection];
+    [RKRobotDiscoveryAgent startDiscovery]; // Might be unnecessary
 }
 
 - (void)appWillTerminate {
-    /*When the application is ending we need to close the connection to the robot*/
-    [self closeRobotConnection];
+    [self disconnectSphero];
 }
 
 #pragma mark - Instance Methods
 
 - (BOOL)spheroConnected {
-    return self.robotControl != nil;
+    return self.robot != nil;
 }
 
 - (BOOL)myoConnected {
@@ -95,14 +95,9 @@
                                              selector:@selector(didReceivePose:)
                                                  name:TLMMyoDidReceivePoseChangedNotification
                                                object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(handleRobotOnline)
-                                                 name:RKDeviceConnectionOnlineNotification
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(handleRobotOffline)
-                                                 name:RKDeviceConnectionOfflineNotification
-                                               object:nil];
+    [[RKRobotDiscoveryAgent sharedAgent] addNotificationObserver:self
+                                                        selector:@selector(handleRobotStateChangeNotification:)];
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(appWillTerminate)
                                                  name:UIApplicationWillTerminateNotification
@@ -117,45 +112,38 @@
 
 #pragma mark Robot Lifecycle
 
-- (void)handleRobotOnline {
-    /*The robot is now online, we can begin sending commands*/
-    self.robotControl = [[RKRobotControl alloc] initWithRobot:[[RKRobotProvider sharedRobotProvider] robot]];
-    self.calibrationHeading = 0;
-    [self shouldCalibrateRobot:YES];
+- (void)handleRobotStateChangeNotification:(RKRobotChangedStateNotification *)notification {
+    switch(notification.type) {
+        case RKRobotConnecting:
+            break;
+        case RKRobotOnline: {
+            RKConvenienceRobot *convenience = [RKConvenienceRobot convenienceWithRobot:notification.robot];
+            self.robot = convenience;
+            [RKRobotDiscoveryAgent stopDiscovery];
+            [self shouldCalibrateRobot:YES];
+            break;
+        }
+        case RKRobotDisconnected:
+            self.robot = nil;
+            [RKRobotDiscoveryAgent startDiscovery];
+            break;
+        default:
+            break;
+    }
     [self.delegate didUpdateState];
 }
 
-- (void)handleRobotOffline {
-    self.robotControl = nil;
+- (void)disconnectSphero {
+    [self.robot disconnect];
+    [RKRobotDiscoveryAgent disconnectAll];
+    self.robot = nil;
     [self.delegate didUpdateState];
-}
-
-- (void)setupRobotConnection {
-    /*Try to connect to the robot*/
-    // If this doesn't work, try isRobotAvailable
-    if ([[RKRobotProvider sharedRobotProvider] isRobotAvailable] && ![[RKRobotProvider sharedRobotProvider] isRobotConnected]) {
-        [[RKRobotProvider sharedRobotProvider] openRobotConnection];
-    }
-}
-
-- (void)closeRobotConnection {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [self setRobotGlowColor:[UIColor whiteColor]];
-    if ([self.robotControl calibrating]) {
-        [self.robotControl stopCalibrated:YES];
-    }
-    self.robotControl = nil;
-    [[RKRobotProvider sharedRobotProvider] closeRobotConnection];
 }
 
 #pragma mark Robot Interaction Methods
 
 - (NSString *)spheroName {
-    return self.robotControl.robot.name.uppercaseString;
-}
-
-- (BOOL)isCalibrating {
-    return [self.robotControl calibrating];
+    return self.robot.name.uppercaseString;
 }
 
 - (void)setRobotGlowColor:(UIColor *)color {
@@ -163,17 +151,20 @@
     CGFloat green;
     CGFloat blue;
     [color getRed:&red green:&green blue:&blue alpha:NULL];
-    [RKRGBLEDOutputCommand sendCommandWithRed:red green:green blue:blue];
+    [self.robot setLEDWithRed:red green:green blue:blue];
 }
 
 - (void)shouldCalibrateRobot:(BOOL)shouldCalibrate {
     if (!self.isCalibrating && shouldCalibrate) {
-        [self.robotControl startCalibration];
+        [self.robot calibrating:YES];
         [self setRobotGlowColor:[MSPLookAndFeel calibrationYellow]];
-        [self.robotControl rollAtHeading:self.calibrationHeading velocity:0.0];
+        [self.robot driveWithHeading:self.calibrationHeading andVelocity:0.0];
+        self.isCalibrating = YES;
     } else if (self.isCalibrating && !shouldCalibrate) {
-        [self.robotControl stopCalibrated:YES];
+        [self.robot calibrating:NO];
+        [self.robot setZeroHeading];
         [self setRobotGlowColor:[MSPLookAndFeel thalmicBlue]];
+        self.isCalibrating = NO;
     }
     [self.delegate didUpdateState];
 }
@@ -224,7 +215,7 @@
 
 - (void)didReceiveOrientation:(NSNotification*)notification {
 
-    if (!self.myo || !self.robotControl) {
+    if (![self myoConnected] || ![self spheroConnected]) {
         return;
     }
 
@@ -256,10 +247,12 @@
             while (self.calibrationHeading < 0) self.calibrationHeading += 360;
             while (self.calibrationHeading > 360) self.calibrationHeading -= 360;
 
-            [self.robotControl rotateToHeading:self.calibrationHeading];
+            //RKSetHeadingCommand *command = [RKSetHeadingCommand commandWithHeading:self.calibrationHeading];
+            //[self.robot sendCommand:command];
+            [self.robot driveWithHeading:self.calibrationHeading andVelocity:0.0];
         }
     } else {
-        [self.robotControl rollAtHeading:heading velocity:velocity];
+        [self.robot driveWithHeading:heading andVelocity:velocity];
     }
 }
 
@@ -275,7 +268,7 @@
 
 - (void)didReceivePose:(TLMPoseType)poseType isBeginning:(BOOL)isBeginning {
 
-    if (!self.myo || !self.robotControl) {
+    if (![self myoConnected] || ![self spheroConnected]) {
         return;
     }
 

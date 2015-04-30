@@ -103,19 +103,18 @@
 #pragma mark - IBAction Methods
 
 - (IBAction)addSpheroTapped:(UIButton *)sender {
-    NSString *title = @"Connect Sphero";
-    NSString *message = @"Connect Sphero in the iOS Settings app. Go to Settings > Bluetooth and tap on Sphero in the list of devices.";
 
     if ([sender isSelected]) {
-        title = @"Disconnect Sphero";
-        message = @"Sphero can be disconnected in the iOS Settings app. Go to Settings > Bluetooth, tap the \"i\" icon next to Sphero in the list of devices, and tap \"Forget Device\".";
+        [self.driveAlgorithm disconnectSphero];
+    } else {
+        NSString *title = @"Connect Sphero";
+        NSString *message = @"Connect Sphero in the iOS Settings app. Go to Settings > Bluetooth and tap on Sphero in the list of devices.";
+        [[[UIAlertView alloc] initWithTitle:title
+                                    message:message
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
     }
-
-    [[[UIAlertView alloc] initWithTitle:title
-                                message:message
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
 }
 
 - (IBAction)addMyoTapped:(UIButton *)sender {

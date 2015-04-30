@@ -25,4 +25,6 @@
 - (NSString *)spheroName;
 - (NSString *)myoName;
 
+- (void)disconnectSphero;
+
 @end
