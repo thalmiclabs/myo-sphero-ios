@@ -16,38 +16,38 @@
                         <viewControllerLayoutGuide type="bottom" id="DCa-qI-RXW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="93s-qz-AAj">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Th0-n1-HJh" userLabel="VisibleView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="520"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="456"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gcy-Fu-9sR" userLabel="IconContainer">
-                                        <rect key="frame" x="150" y="66" width="300" height="388"/>
+                                        <rect key="frame" x="150" y="33" width="300" height="390"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sphero_faded" highlightedImage="sphero" translatesAutoresizingMaskIntoConstraints="NO" id="9dm-QP-Gj4" userLabel="spheroImageView">
-                                                <rect key="frame" x="95" y="30" width="110" height="110"/>
+                                                <rect key="frame" x="95" y="22" width="110" height="110"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="110" id="VAB-lq-Qs6"/>
                                                     <constraint firstAttribute="height" constant="110" id="cPq-o9-usQ"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="callibrate_sphero" highlightedImage="drive-mode" translatesAutoresizingMaskIntoConstraints="NO" id="u41-gd-eAz" userLabel="spheroConnectedImageView">
-                                                <rect key="frame" x="73" y="8" width="154" height="132"/>
+                                                <rect key="frame" x="73" y="0.0" width="154" height="132"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="154" id="5tL-Vk-GP8"/>
                                                     <constraint firstAttribute="height" constant="132" id="m7A-nD-VEb"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="synced_checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="h4c-2h-TFB" userLabel="spheroCheckmark">
-                                                <rect key="frame" x="95" y="30" width="24" height="24"/>
+                                                <rect key="frame" x="95" y="22" width="24" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="24" id="TQb-Nz-RdJ"/>
                                                     <constraint firstAttribute="height" constant="24" id="vnr-m3-P3e"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4G-xW-fdz" userLabel="addSpheroButton">
-                                                <rect key="frame" x="213" y="30" width="50" height="50"/>
+                                                <rect key="frame" x="213" y="22" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="kMT-WJ-eAs"/>
                                                     <constraint firstAttribute="width" constant="50" id="tqm-bC-6OX"/>
@@ -61,7 +61,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONNECT SPHERO..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI0-LI-KlM" userLabel="spheroLabel">
-                                                <rect key="frame" x="8" y="148" width="284" height="21"/>
+                                                <rect key="frame" x="8" y="140" width="284" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="ldN-xs-cDx"/>
                                                 </constraints>
@@ -70,7 +70,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="READY TO CALIBRATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSL-Xe-LuZ" userLabel="spheroStateLabel">
-                                                <rect key="frame" x="8" y="164" width="284" height="21"/>
+                                                <rect key="frame" x="8" y="156" width="284" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="nkN-Ik-pa3"/>
                                                 </constraints>
@@ -79,28 +79,28 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="connected_dots" translatesAutoresizingMaskIntoConstraints="NO" id="oAk-YT-g48">
-                                                <rect key="frame" x="144" y="191" width="12" height="28"/>
+                                                <rect key="frame" x="144" y="192" width="12" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="12" id="5Jr-oG-hdV"/>
                                                     <constraint firstAttribute="height" constant="28" id="geT-Un-iuo"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myo_faded" highlightedImage="myo" translatesAutoresizingMaskIntoConstraints="NO" id="U4b-BV-gld" userLabel="myoImageView">
-                                                <rect key="frame" x="95" y="225" width="110" height="110"/>
+                                                <rect key="frame" x="95" y="227" width="110" height="110"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="110" id="Drw-Ub-o0G"/>
                                                     <constraint firstAttribute="width" constant="110" id="RDE-wD-KoB"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="synced_checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="fas-P5-8dY" userLabel="myoCheckmark">
-                                                <rect key="frame" x="95" y="225" width="24" height="24"/>
+                                                <rect key="frame" x="95" y="227" width="24" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="ALH-TR-aRS"/>
                                                     <constraint firstAttribute="width" constant="24" id="Nb6-2X-b5T"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWd-9Z-Vdu" userLabel="addMyoButton">
-                                                <rect key="frame" x="213" y="225" width="50" height="50"/>
+                                                <rect key="frame" x="213" y="227" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="tp3-CY-Vdw"/>
                                                     <constraint firstAttribute="width" constant="50" id="wIE-PW-wjk"/>
@@ -114,7 +114,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONNECT MYO..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjj-IV-OdE" userLabel="myoLabel">
-                                                <rect key="frame" x="8" y="343" width="284" height="21"/>
+                                                <rect key="frame" x="8" y="345" width="284" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="PS0-Gr-Ung"/>
                                                 </constraints>
@@ -123,7 +123,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PERFORM SYNC GESTURE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTG-Ri-BOJ" userLabel="myoStateLabel">
-                                                <rect key="frame" x="8" y="359" width="284" height="21"/>
+                                                <rect key="frame" x="8" y="361" width="284" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="cUf-LB-ACG"/>
                                                 </constraints>
@@ -135,14 +135,14 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="U4b-BV-gld" firstAttribute="top" secondItem="aWd-9Z-Vdu" secondAttribute="top" id="0ED-Vo-WFL"/>
-                                            <constraint firstItem="u41-gd-eAz" firstAttribute="top" secondItem="Gcy-Fu-9sR" secondAttribute="top" constant="8" id="1Lf-Ph-jSc"/>
+                                            <constraint firstItem="u41-gd-eAz" firstAttribute="top" secondItem="Gcy-Fu-9sR" secondAttribute="top" id="1Lf-Ph-jSc"/>
                                             <constraint firstAttribute="centerX" secondItem="u41-gd-eAz" secondAttribute="centerX" id="2c3-gO-aje"/>
                                             <constraint firstItem="9dm-QP-Gj4" firstAttribute="top" secondItem="B4G-xW-fdz" secondAttribute="top" id="50t-IW-Uqr"/>
                                             <constraint firstItem="pSL-Xe-LuZ" firstAttribute="leading" secondItem="Gcy-Fu-9sR" secondAttribute="leading" constant="8" id="5mQ-w0-ChS"/>
                                             <constraint firstItem="wjj-IV-OdE" firstAttribute="top" secondItem="U4b-BV-gld" secondAttribute="bottom" constant="8" id="6iE-oc-51T"/>
                                             <constraint firstItem="WI0-LI-KlM" firstAttribute="top" secondItem="9dm-QP-Gj4" secondAttribute="bottom" constant="8" id="8mC-VS-cMn"/>
                                             <constraint firstAttribute="trailing" secondItem="pSL-Xe-LuZ" secondAttribute="trailing" constant="8" id="CuZ-V8-lfd"/>
-                                            <constraint firstItem="U4b-BV-gld" firstAttribute="top" secondItem="pSL-Xe-LuZ" secondAttribute="bottom" constant="40" id="DoL-s6-Rzj"/>
+                                            <constraint firstItem="U4b-BV-gld" firstAttribute="top" secondItem="pSL-Xe-LuZ" secondAttribute="bottom" constant="50" id="DoL-s6-Rzj"/>
                                             <constraint firstAttribute="width" constant="300" id="G2R-Jb-gf4"/>
                                             <constraint firstItem="9dm-QP-Gj4" firstAttribute="top" secondItem="h4c-2h-TFB" secondAttribute="top" id="IEL-RS-vNT"/>
                                             <constraint firstItem="qTG-Ri-BOJ" firstAttribute="leading" secondItem="Gcy-Fu-9sR" secondAttribute="leading" constant="8" id="J9O-bi-AIU"/>
@@ -184,7 +184,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KdZ-Ey-BwT" userLabel="PoseView">
-                                <rect key="frame" x="0.0" y="520" width="600" height="80"/>
+                                <rect key="frame" x="0.0" y="456" width="600" height="80"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pyh-UO-HBF" userLabel="ContainerView">
                                         <rect key="frame" x="140" y="12" width="320" height="57"/>
@@ -299,7 +299,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Th0-n1-HJh" firstAttribute="leading" secondItem="93s-qz-AAj" secondAttribute="leading" id="6ji-vY-0n9"/>
                             <constraint firstItem="KdZ-Ey-BwT" firstAttribute="leading" secondItem="93s-qz-AAj" secondAttribute="leading" id="Cxq-eV-dPp"/>
+                            <constraint firstAttribute="trailing" secondItem="Th0-n1-HJh" secondAttribute="trailing" id="M4D-is-oJ1"/>
                             <constraint firstItem="DCa-qI-RXW" firstAttribute="top" secondItem="Th0-n1-HJh" secondAttribute="bottom" constant="100" id="UME-y5-gS4"/>
                             <constraint firstItem="Th0-n1-HJh" firstAttribute="leading" secondItem="93s-qz-AAj" secondAttribute="leadingMargin" constant="-16" id="VQO-k2-k8m"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KdZ-Ey-BwT" secondAttribute="trailing" constant="-16" id="VnE-ah-4BJ"/>
@@ -312,6 +314,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="VQO-k2-k8m"/>
+                                <exclude reference="oGZ-Dr-9nb"/>
                                 <exclude reference="VnE-ah-4BJ"/>
                                 <exclude reference="t0I-cY-Gc0"/>
                                 <exclude reference="UME-y5-gS4"/>
@@ -329,8 +333,10 @@
                     <connections>
                         <outlet property="addMyoButton" destination="aWd-9Z-Vdu" id="3rR-te-iZ4"/>
                         <outlet property="addSpheroButton" destination="B4G-xW-fdz" id="va5-Qz-h3i"/>
+                        <outlet property="connectedDots" destination="oAk-YT-g48" id="4A7-ve-wy0"/>
                         <outlet property="doubleTapIcon" destination="pei-lj-uF7" id="g5D-6l-ng9"/>
                         <outlet property="fistAndRotateIcon" destination="V0d-5e-vY8" id="jWk-HU-MxO"/>
+                        <outlet property="iconSpacingConstraint" destination="DoL-s6-Rzj" id="t0h-c8-SCd"/>
                         <outlet property="myoCheckmark" destination="fas-P5-8dY" id="ZPL-3M-4bv"/>
                         <outlet property="myoImageView" destination="U4b-BV-gld" id="xgh-Jz-IxJ"/>
                         <outlet property="myoLabel" destination="wjj-IV-OdE" id="ZNb-Gb-TTw"/>
@@ -842,7 +848,7 @@
         <image name="synced_checkbox" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="l9r-YQ-qsm"/>
+        <segue reference="aMW-Hn-fY3"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.73725490199999999" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
