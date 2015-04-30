@@ -243,7 +243,7 @@
 
     if(self.isCalibrating) {
         if (self.myo.pose.type == TLMPoseTypeFist) {
-            self.calibrationHeading = self.relativeRoll * 3;
+            self.calibrationHeading = (self.relativeRoll * 3) + self.lastCalibrationHeading;
 
             while (self.calibrationHeading < 0) self.calibrationHeading += 360;
             while (self.calibrationHeading > 360) self.calibrationHeading -= 360;
@@ -294,6 +294,8 @@
             if (self.isCalibrating) {
                 if (isBeginning) {
                     self.referenceEulerAngles = [TLMEulerAngles anglesWithQuaternion:self.myo.orientation.quaternion];
+                } else {
+                    self.lastCalibrationHeading = self.calibrationHeading;
                 }
                 // Indicate user action for both beginning and end of fist.
                 [self.myo indicateUserAction];
