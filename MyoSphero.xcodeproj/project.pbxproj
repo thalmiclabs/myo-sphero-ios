@@ -47,7 +47,7 @@
 		4D92996E17E7A81200C52D68 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		4D92997017E7A81200C52D68 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		4D92997217E7A81200C52D68 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
-		4D92997617E7A81200C52D68 /* MyoSphero-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyoSphero-Info.plist"; sourceTree = "<group>"; };
+		4D92997617E7A81200C52D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D92997817E7A81200C52D68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4D92997A17E7A81200C52D68 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4D92997C17E7A81200C52D68 /* MyoSphero-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyoSphero-Prefix.pch"; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		4D92997517E7A81200C52D68 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4D92997617E7A81200C52D68 /* MyoSphero-Info.plist */,
+				4D92997617E7A81200C52D68 /* Info.plist */,
 				4D92997717E7A81200C52D68 /* InfoPlist.strings */,
 				4D92997A17E7A81200C52D68 /* main.m */,
 				4D92997C17E7A81200C52D68 /* MyoSphero-Prefix.pch */,
@@ -372,7 +372,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyoSphero/MyoSphero-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "MyoSphero/MyoSphero-Info.plist";
+				INFOPLIST_FILE = MyoSphero/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
@@ -407,7 +407,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyoSphero/MyoSphero-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "MyoSphero/MyoSphero-Info.plist";
+				INFOPLIST_FILE = MyoSphero/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
