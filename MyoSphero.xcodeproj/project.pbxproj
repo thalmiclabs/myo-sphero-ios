@@ -29,10 +29,10 @@
 		543B1BDB1AF1697F00EF7897 /* MSPRoundedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 543B1BDA1AF1697F00EF7897 /* MSPRoundedLabel.m */; };
 		543B1BDE1AF1B33200EF7897 /* MSPRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 543B1BDD1AF1B33200EF7897 /* MSPRoundedView.m */; };
 		543B1BE41AF1CC2700EF7897 /* MSPSpheroDriveAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 543B1BE31AF1CC2700EF7897 /* MSPSpheroDriveAlgorithm.m */; };
+		543B1BE61AF1D39B00EF7897 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543B1BE51AF1D39B00EF7897 /* MyoKit.framework */; };
 		54919EBE1A13DE0A00D3A823 /* MSPLookAndFeel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54919EBD1A13DE0A00D3A823 /* MSPLookAndFeel.m */; };
 		54919EC31A150C1300D3A823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54919EC21A150C1300D3A823 /* Main.storyboard */; };
 		54919EC71A15144E00D3A823 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 54919EC61A15144E00D3A823 /* libstdc++.6.dylib */; };
-		54D9F6471A2F88E400EF2D51 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9F6461A2F88E400EF2D51 /* MyoKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,12 +69,12 @@
 		543B1BDD1AF1B33200EF7897 /* MSPRoundedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPRoundedView.m; sourceTree = "<group>"; };
 		543B1BE21AF1CC2700EF7897 /* MSPSpheroDriveAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPSpheroDriveAlgorithm.h; sourceTree = "<group>"; };
 		543B1BE31AF1CC2700EF7897 /* MSPSpheroDriveAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPSpheroDriveAlgorithm.m; sourceTree = "<group>"; };
+		543B1BE51AF1D39B00EF7897 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyoKit.framework; path = MyoSphero/Frameworks/MyoKit.framework; sourceTree = "<group>"; };
 		54919EBC1A13DE0A00D3A823 /* MSPLookAndFeel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPLookAndFeel.h; sourceTree = "<group>"; };
 		54919EBD1A13DE0A00D3A823 /* MSPLookAndFeel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPLookAndFeel.m; sourceTree = "<group>"; };
 		54919EC21A150C1300D3A823 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		54919EC41A15141800D3A823 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		54919EC61A15144E00D3A823 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
-		54D9F6461A2F88E400EF2D51 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyoKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54919EC71A15144E00D3A823 /* libstdc++.6.dylib in Frameworks */,
-				54D9F6471A2F88E400EF2D51 /* MyoKit.framework in Frameworks */,
+				543B1BE61AF1D39B00EF7897 /* MyoKit.framework in Frameworks */,
 				4DA163B018A2F4FD00D498B7 /* AudioToolbox.framework in Frameworks */,
 				4D57D211180301050095081E /* libz.dylib in Frameworks */,
 				4D9299C317E7ABA500C52D68 /* SystemConfiguration.framework in Frameworks */,
@@ -121,7 +121,7 @@
 		4D92996717E7A81200C52D68 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				54D9F6461A2F88E400EF2D51 /* MyoKit.framework */,
+				543B1BE51AF1D39B00EF7897 /* MyoKit.framework */,
 				54919EC61A15144E00D3A823 /* libstdc++.6.dylib */,
 				54919EC41A15141800D3A823 /* libsqlite3.0.dylib */,
 				4DA163AF18A2F4FD00D498B7 /* AudioToolbox.framework */,
