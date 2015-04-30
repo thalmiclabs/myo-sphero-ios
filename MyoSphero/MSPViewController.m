@@ -39,11 +39,6 @@
     [self updateUIForMyoState];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self.driveAlgorithm setupRobotConnection];
-}
-
 #pragma mark - Instance Methods
 
 - (void)updateUIForMyoState {

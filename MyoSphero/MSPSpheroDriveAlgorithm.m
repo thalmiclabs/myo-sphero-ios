@@ -43,6 +43,10 @@
 
 #pragma mark - App Lifecycle 
 
+- (void)appWillEnterForeground {
+    [self setupRobotConnection];
+}
+
 - (void)appWillTerminate {
     /*When the application is ending we need to close the connection to the robot*/
     [self closeRobotConnection];
@@ -76,11 +80,11 @@
                                                  name:TLMHubDidDisconnectDeviceNotification
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didReceiveSyncGesture:)
+                                             selector:@selector(onMyoAvailable)
                                                  name:TLMMyoDidReceiveArmSyncEventNotification
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didReceiveUnsyncGesture:)
+                                             selector:@selector(onMyoUnavailable)
                                                  name:TLMMyoDidReceiveArmUnsyncEventNotification
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -102,6 +106,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(appWillTerminate)
                                                  name:UIApplicationWillTerminateNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(appWillEnterForeground)
+                                                 name:UIApplicationWillEnterForegroundNotification
                                                object:nil];
 }
 
@@ -210,7 +218,7 @@
 }
 
 - (void)onMyoUnavailable {
-    [self.robotControl rollAtHeading:self.calibrationHeading velocity:0.0];
+    [self shouldCalibrateRobot:YES];
     [self.delegate didUpdateState];
 }
 
@@ -305,14 +313,6 @@
         default:
             break;
     }
-}
-
-- (void)didReceiveSyncGesture:(NSNotification *)notification {
-    [self.delegate didUpdateState];
-}
-
-- (void)didReceiveUnsyncGesture:(NSNotification *)notification {
-    [self onMyoUnavailable];
 }
 
 @end

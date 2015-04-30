@@ -22,7 +22,6 @@
 
 @property (nonatomic, assign) id<MSPSpheroDriveAlgorithmDelegate> delegate;
 
-- (void)setupRobotConnection;
 - (NSString *)spheroName;
 - (NSString *)myoName;
 
