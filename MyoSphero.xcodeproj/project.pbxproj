@@ -39,7 +39,7 @@
 		374BF747190EDFEB00DBE668 /* RobotUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = RobotUIKit.bundle; path = MyoSphero/Frameworks/RobotUIKit.bundle; sourceTree = "<group>"; };
 		374BF748190EDFEB00DBE668 /* RobotUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotUIKit.framework; path = MyoSphero/Frameworks/RobotUIKit.framework; sourceTree = "<group>"; };
 		4D57D210180301050095081E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		4D92996517E7A81200C52D68 /* Myo+Sphero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Myo+Sphero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D92996517E7A81200C52D68 /* Myo + Sphero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Myo + Sphero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D92996817E7A81200C52D68 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4D92996A17E7A81200C52D68 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4D92996C17E7A81200C52D68 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -110,7 +110,7 @@
 		4D92996617E7A81200C52D68 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4D92996517E7A81200C52D68 /* Myo+Sphero.app */,
+				4D92996517E7A81200C52D68 /* Myo + Sphero.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,7 +191,7 @@
 			);
 			name = MyoSphero;
 			productName = MyoSphero;
-			productReference = 4D92996517E7A81200C52D68 /* Myo+Sphero.app */;
+			productReference = 4D92996517E7A81200C52D68 /* Myo + Sphero.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -380,7 +380,7 @@
 					"-lstdc++",
 					"-lsqlite3.0",
 				);
-				PRODUCT_NAME = "Myo+Sphero";
+				PRODUCT_NAME = "Myo + Sphero";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -412,7 +412,7 @@
 					"-lstdc++",
 					"-lsqlite3.0",
 				);
-				PRODUCT_NAME = "Myo+Sphero";
+				PRODUCT_NAME = "Myo + Sphero";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
