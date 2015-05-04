@@ -26,6 +26,9 @@
 @property (nonatomic, readonly) TLMMyo *myo;
 @property (nonatomic, strong) TLMPose *lastPose;
 
+@property (nonatomic, readwrite) NSInteger messageCount;
+@property (nonatomic, readwrite) NSInteger myoMessagesForEachSpheroMessage;
+
 @end
 
 @implementation MSPSpheroDriveAlgorithm
@@ -35,17 +38,21 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        self.messageCount = 0;
         [self setupNotifications];
         [[RKRobotDiscoveryAgent sharedAgent] setMaxConnectedRobots:1];
-        [RKRobotDiscoveryAgent startDiscovery];
     }
     return  self;
 }
 
-#pragma mark - App Lifecycle 
+#pragma mark - App Lifecycle
 
-- (void)appWillEnterForeground {
-    [RKRobotDiscoveryAgent startDiscovery]; // Might be unnecessary
+- (void)appDidBecomeActive {
+    [RKRobotDiscoveryAgent startDiscovery];
+}
+
+- (void)appWillResignActive {
+    [RKRobotDiscoveryAgent stopDiscovery];
 }
 
 - (void)appWillTerminate {
@@ -97,14 +104,17 @@
                                                object:nil];
     [[RKRobotDiscoveryAgent sharedAgent] addNotificationObserver:self
                                                         selector:@selector(handleRobotStateChangeNotification:)];
-
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(appWillTerminate)
                                                  name:UIApplicationWillTerminateNotification
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(appWillEnterForeground)
-                                                 name:UIApplicationWillEnterForegroundNotification
+                                             selector:@selector(appDidBecomeActive)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(appWillResignActive)
+                                                 name:UIApplicationWillResignActiveNotification
                                                object:nil];
 }
 
@@ -117,8 +127,17 @@
         case RKRobotConnecting:
             break;
         case RKRobotOnline: {
-            RKConvenienceRobot *convenience = [RKConvenienceRobot convenienceWithRobot:notification.robot];
-            self.robot = convenience;
+            if ([notification.robot isKindOfClass:[RKRobotLE class]]) {
+                // Ollie cannot handle messages at 50 Hz, so reduce the number of messages sent to Ollie.
+                self.myoMessagesForEachSpheroMessage = 2;
+                self.robot = [RKOllie convenienceWithRobot:notification.robot];
+            } else if ([notification.robot isKindOfClass:[RKRobotClassic class]]) {
+                self.myoMessagesForEachSpheroMessage = 1;
+                self.robot = [RKSphero convenienceWithRobot:notification.robot];
+            } else {
+                NSLog(@"Robot type not supported");
+                return;
+            }
             [RKRobotDiscoveryAgent stopDiscovery];
             [self shouldCalibrateRobot:YES];
             break;
@@ -134,6 +153,7 @@
 }
 
 - (void)disconnectSphero {
+    [self.robot sleep];
     [self.robot disconnect];
     [RKRobotDiscoveryAgent disconnectAll];
     self.robot = nil;
@@ -141,6 +161,10 @@
 }
 
 #pragma mark Robot Interaction Methods
+
+- (BOOL)isOllie {
+    return [self.robot.robot isKindOfClass:[RKRobotLE class]];
+}
 
 - (NSString *)spheroName {
     return self.robot.name.uppercaseString;
@@ -155,12 +179,12 @@
 }
 
 - (void)shouldCalibrateRobot:(BOOL)shouldCalibrate {
-    if (!self.isCalibrating && shouldCalibrate) {
+    if (shouldCalibrate) {
         [self.robot calibrating:YES];
         [self setRobotGlowColor:[MSPLookAndFeel calibrationYellow]];
         [self.robot driveWithHeading:self.calibrationHeading andVelocity:0.0];
         self.isCalibrating = YES;
-    } else if (self.isCalibrating && !shouldCalibrate) {
+    } else {
         [self.robot calibrating:NO];
         [self.robot setZeroHeading];
         [self setRobotGlowColor:[MSPLookAndFeel thalmicBlue]];
@@ -219,6 +243,12 @@
         [self.delegate didMakeInputType:InputTypePan isBeginning:NO];
         return;
     }
+
+    self.messageCount++;
+    if (self.messageCount < self.myoMessagesForEachSpheroMessage) {
+        return;
+    }
+    self.messageCount = 0;
 
     TLMOrientationEvent *orientation = notification.userInfo[kTLMKeyOrientationEvent];
     [self calculateRelativeEulerAnglesForQuaternion:orientation.quaternion];
