@@ -34,5 +34,6 @@ typedef NS_ENUM(NSInteger, InputType) {
 - (NSString *)myoName;
 
 - (void)disconnectSphero;
+- (BOOL)isOllie;
 
 @end
