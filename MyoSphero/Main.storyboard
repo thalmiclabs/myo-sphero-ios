@@ -20,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Th0-n1-HJh" userLabel="VisibleView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="456"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="436"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gcy-Fu-9sR" userLabel="IconContainer">
-                                        <rect key="frame" x="150" y="33" width="300" height="390"/>
+                                        <rect key="frame" x="150" y="23" width="300" height="390"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sphero_faded" highlightedImage="sphero" translatesAutoresizingMaskIntoConstraints="NO" id="9dm-QP-Gj4" userLabel="spheroImageView">
                                                 <rect key="frame" x="95" y="22" width="110" height="110"/>
@@ -66,7 +66,7 @@
                                                     <constraint firstAttribute="height" constant="21" id="ldN-xs-cDx"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="READY TO CALIBRATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSL-Xe-LuZ" userLabel="spheroStateLabel">
@@ -75,7 +75,7 @@
                                                     <constraint firstAttribute="height" constant="21" id="nkN-Ik-pa3"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="connected_dots" translatesAutoresizingMaskIntoConstraints="NO" id="oAk-YT-g48">
@@ -119,7 +119,7 @@
                                                     <constraint firstAttribute="height" constant="21" id="PS0-Gr-Ung"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PERFORM SYNC GESTURE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTG-Ri-BOJ" userLabel="myoStateLabel">
@@ -128,7 +128,7 @@
                                                     <constraint firstAttribute="height" constant="21" id="cUf-LB-ACG"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -184,10 +184,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KdZ-Ey-BwT" userLabel="PoseView">
-                                <rect key="frame" x="0.0" y="456" width="600" height="80"/>
+                                <rect key="frame" x="0.0" y="436" width="600" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pyh-UO-HBF" userLabel="ContainerView">
-                                        <rect key="frame" x="140" y="12" width="320" height="57"/>
+                                        <rect key="frame" x="140" y="22" width="320" height="57"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fistAndRotate_innactive" highlightedImage="fistAndRotate_active" translatesAutoresizingMaskIntoConstraints="NO" id="V0d-5e-vY8">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="57"/>
@@ -287,7 +287,7 @@
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Pyh-UO-HBF" secondAttribute="trailing" priority="500" id="aMs-Fb-pyy"/>
                                     <constraint firstItem="Pyh-UO-HBF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KdZ-Ey-BwT" secondAttribute="leading" priority="500" id="cF0-3N-4K4"/>
                                     <constraint firstAttribute="centerY" secondItem="Pyh-UO-HBF" secondAttribute="centerY" id="dsV-HQ-30f"/>
-                                    <constraint firstAttribute="height" constant="80" id="siE-kg-hor"/>
+                                    <constraint firstAttribute="height" constant="100" id="siE-kg-hor"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -342,6 +342,7 @@
                         <outlet property="myoLabel" destination="wjj-IV-OdE" id="ZNb-Gb-TTw"/>
                         <outlet property="myoStateLabel" destination="qTG-Ri-BOJ" id="RNG-Da-s3z"/>
                         <outlet property="panIcon" destination="djr-ba-KZb" id="Xzk-Sd-4XH"/>
+                        <outlet property="poseContainerConstraint" destination="siE-kg-hor" id="c7h-DF-91U"/>
                         <outlet property="spheroCheckmark" destination="h4c-2h-TFB" id="AzE-ZS-LDu"/>
                         <outlet property="spheroConnectedImageView" destination="u41-gd-eAz" id="aVv-Ba-202"/>
                         <outlet property="spheroImageView" destination="9dm-QP-Gj4" id="KP6-iv-wZk"/>
@@ -361,7 +362,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="VEJ-mp-wtj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="ncV-M4-iMD">
                                 <cells>
@@ -386,21 +387,21 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="First">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
                                                         </fragment>
                                                         <fragment content=" ">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="HelveticaNeue"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
                                                         </fragment>
                                                         <fragment content="calibrate">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="HelveticaNeue-Medium"/>
                                                                 <font key="NSOriginalFont" size="16" name="HelveticaNeue-Medium"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
@@ -408,14 +409,14 @@
                                                         </fragment>
                                                         <fragment content=" ">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="HelveticaNeue"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
                                                         </fragment>
                                                         <fragment content="Sphero. Hold a fist and rotate it until the calibration dot is facing you.">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
@@ -478,21 +479,21 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="Next, put your arm out in front of you, palm down. Spread your fingers to activate ">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
                                                         </fragment>
                                                         <fragment content="drive mode">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="HelveticaNeue-Medium"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
                                                         </fragment>
                                                         <fragment content=".">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
@@ -553,7 +554,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="Once activated, Sphero follows the movement of your arm.">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
@@ -614,35 +615,35 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="Picture your forearm as a flat plane that you have to balance Sphero on. Point down to move Sphero ">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
                                                         </fragment>
                                                         <fragment content="away">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="HelveticaNeue-Medium"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
                                                         </fragment>
                                                         <fragment content=" and up to move Sphero ">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
                                                         </fragment>
                                                         <fragment content="towards">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="HelveticaNeue-Medium"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
                                                         </fragment>
                                                         <fragment content=" you.">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
@@ -716,21 +717,21 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="Double tap to ">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
                                                         </fragment>
                                                         <fragment content="stop">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="HelveticaNeue-Medium"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
                                                         </fragment>
                                                         <fragment content=" Sphero and put it back in calibration mode.">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
