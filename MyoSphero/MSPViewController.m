@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *doubleTapIcon;
 @property (weak, nonatomic) IBOutlet UIImageView *connectedDots;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *iconSpacingConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *poseContainerConstraint;
 
 @end
 
@@ -45,11 +46,11 @@
     [self updateUIForMyoState];
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
+- (void)viewDidLayoutSubviews {
     if ([self is3Point5InchScreen]) {
         [self.connectedDots setHidden:YES];
         [self.iconSpacingConstraint setConstant:10];
+        [self.poseContainerConstraint setConstant:80];
     }
 }
 
