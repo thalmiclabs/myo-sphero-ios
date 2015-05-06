@@ -10,9 +10,10 @@
 #import "MSPSpheroDriveAlgorithm.h"
 #import <MyoKit/MyoKit.h>
 
-@interface MSPViewController() <MSPSpheroDriveAlgorithmDelegate>
+@interface MSPViewController() <MSPSpheroDriveAlgorithmDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) MSPSpheroDriveAlgorithm *driveAlgorithm;
+@property (nonatomic, strong) UIAlertView *robotConnectAlertView;
 
 @property (weak, nonatomic) IBOutlet UIButton *addSpheroButton;
 @property (weak, nonatomic) IBOutlet UIButton *addMyoButton;
@@ -116,6 +117,12 @@
     } else {
         [self.spheroLabel setText:@"CONNECT SPHERO OR OLLIE..."];
     }
+
+    // Alert View
+    if (robotConnected && self.robotConnectAlertView.isVisible) {
+        [self.robotConnectAlertView dismissWithClickedButtonIndex:0 animated:YES];
+        self.robotConnectAlertView = nil;
+    }
 }
 
 - (BOOL)is3Point5InchScreen {
@@ -152,6 +159,12 @@
     }
 }
 
+#pragma mark - UIAlertViewDelegate Methods
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    self.robotConnectAlertView = nil;
+}
+
 #pragma mark - IBAction Methods
 
 - (IBAction)addSpheroTapped:(UIButton *)sender {
@@ -159,13 +172,14 @@
     if ([sender isSelected]) {
         [self.driveAlgorithm disconnectSphero];
     } else {
-        NSString *title = @"Connect Sphero";
-        NSString *message = @"Connect Sphero in the iOS Settings app. Go to Settings > Bluetooth and tap on Sphero in the list of devices.";
-        [[[UIAlertView alloc] initWithTitle:title
-                                    message:message
-                                   delegate:nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
+        NSString *title = @"Connect Sphero or Ollie";
+        NSString *message = @"Connect Sphero in the iOS Settings app. Go to Settings > Bluetooth and tap on Sphero in the list of devices.\n\nConnect Ollie by bringing it close to your iOS device.";
+        self.robotConnectAlertView = [[UIAlertView alloc] initWithTitle:title
+                                                                message:message
+                                                               delegate:self
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+        [self.robotConnectAlertView show];
     }
 }
 
