@@ -26,14 +26,14 @@ typedef NS_ENUM(NSInteger, InputType) {
 
 @property (nonatomic, readonly) BOOL myoConnected;
 @property (nonatomic, readonly) BOOL spheroConnected;
+@property (nonatomic, readonly) BOOL ollieConnected;
 @property (nonatomic, readonly) BOOL isCalibrating;
 
 @property (nonatomic, assign) id<MSPSpheroDriveAlgorithmDelegate> delegate;
 
-- (NSString *)spheroName;
+- (NSString *)robotName;
 - (NSString *)myoName;
 
 - (void)disconnectSphero;
-- (BOOL)isOllie;
 
 @end

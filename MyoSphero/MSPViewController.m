@@ -10,14 +10,16 @@
 #import "MSPSpheroDriveAlgorithm.h"
 #import <MyoKit/MyoKit.h>
 
-@interface MSPViewController() <MSPSpheroDriveAlgorithmDelegate>
+@interface MSPViewController() <MSPSpheroDriveAlgorithmDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) MSPSpheroDriveAlgorithm *driveAlgorithm;
+@property (nonatomic, strong) UIAlertView *robotConnectAlertView;
 
 @property (weak, nonatomic) IBOutlet UIButton *addSpheroButton;
 @property (weak, nonatomic) IBOutlet UIButton *addMyoButton;
 @property (weak, nonatomic) IBOutlet UIImageView *spheroImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *spheroConnectedImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *ollieImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *myoImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *spheroCheckmark;
 @property (weak, nonatomic) IBOutlet UIImageView *myoCheckmark;
@@ -59,17 +61,31 @@
 - (void)updateUIForMyoState {
 
     BOOL spheroConnected = self.driveAlgorithm.spheroConnected;
+    BOOL ollieConnected = self.driveAlgorithm.ollieConnected;
+    BOOL robotConnected = spheroConnected || ollieConnected;
     BOOL myoConnected = self.driveAlgorithm.myoConnected;
-    BOOL bothConnected = spheroConnected && myoConnected;
+    BOOL spheroAndMyoConnected = spheroConnected && myoConnected;
+    BOOL ollieAndMyoConnected = ollieConnected && myoConnected;
+    BOOL robotAndMyoConnected = robotConnected && myoConnected;
+
+    // Ollie Images
+    NSString *ollieImage = ollieAndMyoConnected ? @"calibrate_ollie" : @"ollie_faded";
+    NSString *ollieHighlightedImage = ollieAndMyoConnected ? @"drive_ollie" : @"ollie";
+    [self.ollieImageView setImage:[UIImage imageNamed:ollieImage]];
+    [self.ollieImageView setHighlightedImage:[UIImage imageNamed:ollieHighlightedImage]];
 
     // Visibility
-    [self.addSpheroButton setSelected:spheroConnected];
-    [self.spheroCheckmark setHidden:!spheroConnected];
+    [self.addSpheroButton setSelected:robotConnected];
+    [self.spheroCheckmark setHidden:!robotConnected];
     [self.spheroImageView setHighlighted:spheroConnected];
-    [self.spheroImageView setHidden:bothConnected];
-    [self.spheroConnectedImageView setHidden:!bothConnected];
+    [self.spheroImageView setHidden:robotAndMyoConnected || ollieConnected];
+    [self.spheroConnectedImageView setHidden:!(spheroAndMyoConnected)];
     [self.spheroConnectedImageView setHighlighted:!self.driveAlgorithm.isCalibrating];
-    [self.spheroStateLabel setHidden:!spheroConnected];
+    [self.ollieImageView setHidden:!ollieConnected];
+    BOOL ollieHighlighted = ((ollieConnected && !myoConnected) ||
+                             (ollieAndMyoConnected && !self.driveAlgorithm.isCalibrating));
+    [self.ollieImageView setHighlighted:ollieHighlighted];
+    [self.spheroStateLabel setHidden:!robotConnected];
 
     [self.addMyoButton setSelected:myoConnected];
     [self.myoCheckmark setHidden:!myoConnected];
@@ -77,7 +93,7 @@
     [self.myoStateLabel setHidden:!myoConnected];
 
     // Colors
-    [self.spheroLabel setTextColor:spheroConnected ? [UIColor whiteColor] : [UIColor blackColor]];
+    [self.spheroLabel setTextColor:robotConnected ? [UIColor whiteColor] : [UIColor blackColor]];
     [self.myoLabel setTextColor:myoConnected ? [UIColor whiteColor] : [UIColor blackColor]];
 
     // Text
@@ -96,10 +112,16 @@
     } else {
         [self.myoLabel setText:@"CONNECT MYO..."];
     }
-    if (spheroConnected) {
-        [self.spheroLabel setText:self.driveAlgorithm.spheroName];
+    if (robotConnected) {
+        [self.spheroLabel setText:self.driveAlgorithm.robotName];
     } else {
-        [self.spheroLabel setText:@"CONNECT SPHERO..."];
+        [self.spheroLabel setText:@"CONNECT SPHERO OR OLLIE..."];
+    }
+
+    // Alert View
+    if (robotConnected && self.robotConnectAlertView.isVisible) {
+        [self.robotConnectAlertView dismissWithClickedButtonIndex:0 animated:YES];
+        self.robotConnectAlertView = nil;
     }
 }
 
@@ -137,6 +159,12 @@
     }
 }
 
+#pragma mark - UIAlertViewDelegate Methods
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    self.robotConnectAlertView = nil;
+}
+
 #pragma mark - IBAction Methods
 
 - (IBAction)addSpheroTapped:(UIButton *)sender {
@@ -144,13 +172,14 @@
     if ([sender isSelected]) {
         [self.driveAlgorithm disconnectSphero];
     } else {
-        NSString *title = @"Connect Sphero";
-        NSString *message = @"Connect Sphero in the iOS Settings app. Go to Settings > Bluetooth and tap on Sphero in the list of devices.";
-        [[[UIAlertView alloc] initWithTitle:title
-                                    message:message
-                                   delegate:nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
+        NSString *title = @"Connect Sphero or Ollie";
+        NSString *message = @"Connect Sphero in the iOS Settings app. Go to Settings > Bluetooth and tap on Sphero in the list of devices.\n\nConnect Ollie by bringing it close to your iOS device.";
+        self.robotConnectAlertView = [[UIAlertView alloc] initWithTitle:title
+                                                                message:message
+                                                               delegate:self
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+        [self.robotConnectAlertView show];
     }
 }
 

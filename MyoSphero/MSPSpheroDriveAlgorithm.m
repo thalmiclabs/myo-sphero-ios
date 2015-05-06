@@ -62,7 +62,11 @@
 #pragma mark - Instance Methods
 
 - (BOOL)spheroConnected {
-    return self.robot != nil;
+    return self.robot != nil && [self.robot.robot isKindOfClass:[RKRobotClassic class]];
+}
+
+- (BOOL)ollieConnected {
+    return self.robot != nil && [self.robot.robot isKindOfClass:[RKRobotLE class]];
 }
 
 - (BOOL)myoConnected {
@@ -162,11 +166,11 @@
 
 #pragma mark Robot Interaction Methods
 
-- (BOOL)isOllie {
-    return [self.robot.robot isKindOfClass:[RKRobotLE class]];
+- (BOOL)isRobotConnected {
+    return self.ollieConnected || self.spheroConnected;
 }
 
-- (NSString *)spheroName {
+- (NSString *)robotName {
     return self.robot.name.uppercaseString;
 }
 
@@ -239,7 +243,7 @@
 
 - (void)didReceiveOrientation:(NSNotification*)notification {
 
-    if (![self myoConnected] || ![self spheroConnected]) {
+    if (![self myoConnected] || ![self isRobotConnected]) {
         [self.delegate didMakeInputType:InputTypePan isBeginning:NO];
         return;
     }
@@ -308,7 +312,7 @@
 
 - (void)didReceivePose:(TLMPoseType)poseType isBeginning:(BOOL)isBeginning {
 
-    if (![self myoConnected] || ![self spheroConnected]) {
+    if (![self myoConnected] || ![self isRobotConnected]) {
         return;
     }
 

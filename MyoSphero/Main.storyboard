@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iD6-Vg-d2W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iD6-Vg-d2W">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -32,11 +32,18 @@
                                                     <constraint firstAttribute="height" constant="110" id="cPq-o9-usQ"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="callibrate_sphero" highlightedImage="drive-mode" translatesAutoresizingMaskIntoConstraints="NO" id="u41-gd-eAz" userLabel="spheroConnectedImageView">
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calibrate_sphero" highlightedImage="drive_sphero" translatesAutoresizingMaskIntoConstraints="NO" id="u41-gd-eAz" userLabel="spheroConnectedImageView">
                                                 <rect key="frame" x="73" y="0.0" width="154" height="132"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="154" id="5tL-Vk-GP8"/>
                                                     <constraint firstAttribute="height" constant="132" id="m7A-nD-VEb"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ollie_faded" highlightedImage="ollie" translatesAutoresizingMaskIntoConstraints="NO" id="cc0-p6-5iv" userLabel="ollieImageView">
+                                                <rect key="frame" x="48" y="4" width="205" height="137"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="137" id="1mH-UK-qv2"/>
+                                                    <constraint firstAttribute="width" constant="205" id="DrF-c2-7by"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="synced_checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="h4c-2h-TFB" userLabel="spheroCheckmark">
@@ -60,7 +67,7 @@
                                                     <action selector="addSpheroTapped:" destination="xNC-1E-zeA" eventType="touchUpInside" id="Hji-NX-0Lu"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONNECT SPHERO..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI0-LI-KlM" userLabel="spheroLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONNECT SPHERO OR OLLIE..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI0-LI-KlM" userLabel="spheroLabel">
                                                 <rect key="frame" x="8" y="140" width="284" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="ldN-xs-cDx"/>
@@ -69,7 +76,7 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="READY TO CALIBRATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSL-Xe-LuZ" userLabel="spheroStateLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALIBRATION MODE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSL-Xe-LuZ" userLabel="spheroStateLabel">
                                                 <rect key="frame" x="8" y="156" width="284" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="nkN-Ik-pa3"/>
@@ -141,8 +148,10 @@
                                             <constraint firstItem="pSL-Xe-LuZ" firstAttribute="leading" secondItem="Gcy-Fu-9sR" secondAttribute="leading" constant="8" id="5mQ-w0-ChS"/>
                                             <constraint firstItem="wjj-IV-OdE" firstAttribute="top" secondItem="U4b-BV-gld" secondAttribute="bottom" constant="8" id="6iE-oc-51T"/>
                                             <constraint firstItem="WI0-LI-KlM" firstAttribute="top" secondItem="9dm-QP-Gj4" secondAttribute="bottom" constant="8" id="8mC-VS-cMn"/>
+                                            <constraint firstItem="cc0-p6-5iv" firstAttribute="bottom" secondItem="9dm-QP-Gj4" secondAttribute="bottom" constant="9" id="AO7-vE-C6N"/>
                                             <constraint firstAttribute="trailing" secondItem="pSL-Xe-LuZ" secondAttribute="trailing" constant="8" id="CuZ-V8-lfd"/>
                                             <constraint firstItem="U4b-BV-gld" firstAttribute="top" secondItem="pSL-Xe-LuZ" secondAttribute="bottom" constant="50" id="DoL-s6-Rzj"/>
+                                            <constraint firstItem="cc0-p6-5iv" firstAttribute="centerX" secondItem="9dm-QP-Gj4" secondAttribute="centerX" id="Et0-vN-7JP"/>
                                             <constraint firstAttribute="width" constant="300" id="G2R-Jb-gf4"/>
                                             <constraint firstItem="9dm-QP-Gj4" firstAttribute="top" secondItem="h4c-2h-TFB" secondAttribute="top" id="IEL-RS-vNT"/>
                                             <constraint firstItem="qTG-Ri-BOJ" firstAttribute="leading" secondItem="Gcy-Fu-9sR" secondAttribute="leading" constant="8" id="J9O-bi-AIU"/>
@@ -341,6 +350,7 @@
                         <outlet property="myoImageView" destination="U4b-BV-gld" id="xgh-Jz-IxJ"/>
                         <outlet property="myoLabel" destination="wjj-IV-OdE" id="ZNb-Gb-TTw"/>
                         <outlet property="myoStateLabel" destination="qTG-Ri-BOJ" id="RNG-Da-s3z"/>
+                        <outlet property="ollieImageView" destination="cc0-p6-5iv" id="37p-oo-5Kc"/>
                         <outlet property="panIcon" destination="djr-ba-KZb" id="Xzk-Sd-4XH"/>
                         <outlet property="poseContainerConstraint" destination="siE-kg-hor" id="c7h-DF-91U"/>
                         <outlet property="spheroCheckmark" destination="h4c-2h-TFB" id="AzE-ZS-LDu"/>
@@ -353,7 +363,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLI-OG-DLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1230" y="377"/>
+            <point key="canvasLocation" x="1173" y="357"/>
         </scene>
         <!--Instructions-->
         <scene sceneID="w4Z-C6-lnC">
@@ -862,18 +872,20 @@
         <image name="04-illustration" width="243" height="128"/>
         <image name="04-pro tip" width="271" height="200"/>
         <image name="add_button" width="50" height="50"/>
-        <image name="callibrate_sphero" width="154" height="132"/>
+        <image name="calibrate_sphero" width="154" height="132"/>
         <image name="close_button" width="50" height="50"/>
         <image name="connected_dots" width="12" height="28"/>
         <image name="doubleTap_active" width="57" height="57"/>
         <image name="doubleTap_innactive" width="57" height="57"/>
-        <image name="drive-mode" width="154" height="132"/>
+        <image name="drive_sphero" width="154" height="132"/>
         <image name="exclamation" width="3" height="11"/>
         <image name="fistAndRotate_active" width="57" height="57"/>
         <image name="fistAndRotate_innactive" width="57" height="57"/>
         <image name="instruction_icon" width="30" height="19"/>
         <image name="myo" width="114" height="123"/>
         <image name="myo_faded" width="114" height="123"/>
+        <image name="ollie" width="205" height="137"/>
+        <image name="ollie_faded" width="205" height="137"/>
         <image name="pan_active" width="57" height="57"/>
         <image name="pan_innactive" width="57" height="57"/>
         <image name="sphero" width="110" height="110"/>
