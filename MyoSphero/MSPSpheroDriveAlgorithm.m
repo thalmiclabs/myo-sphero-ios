@@ -275,6 +275,9 @@
         [self.delegate didMakeInputType:InputTypePan isBeginning:NO];
     }
 
+    velocity *= 2; // Brings range up to 0 - 1.0
+    velocity *= velocity; // Makes the input quadratic.
+
     //bound the headings
     if (heading < 0) heading += 360;
     if (heading > 360) heading -= 360;
