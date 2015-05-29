@@ -261,19 +261,17 @@
     double inputPitch = MIN(MAX(self.relativePitch/45.0, -1), 1);
 
     double heading = atan(inputRoll/inputPitch)*180/M_PI;
-    double velocity = sqrt(inputRoll*inputRoll + inputPitch*inputPitch)/2;
-
-    if (velocity > 0.55) velocity = 0;
-    velocity = MIN(MAX(velocity, 0.0), 0.5);
-    if (velocity < 0.10) velocity = 0;
-
-    if (inputPitch < 0) heading += 180;
-
-    heading -= self.relativeYaw;
+    double velocity = MIN(sqrt(inputRoll*inputRoll + inputPitch*inputPitch)/2, 0.5);
 
     if (velocity < 0.1) {
         [self.delegate didMakeInputType:InputTypePan isBeginning:NO];
+        velocity = 0;
     }
+    if (inputPitch < 0) {
+        heading += 180;
+    }
+
+    heading -= self.relativeYaw;
 
     velocity *= 2; // Brings range up to 0 - 1.0
     velocity *= velocity; // Makes the input quadratic.
