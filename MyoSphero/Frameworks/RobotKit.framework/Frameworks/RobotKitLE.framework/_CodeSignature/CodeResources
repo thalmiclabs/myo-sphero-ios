@@ -20,9 +20,17 @@
 		<data>
 		j6HhecJ5mksEukzBQiccyCpmhow=
 		</data>
+		<key>Headers/RKDeviceInfoServiceWrapper.h</key>
+		<data>
+		jqeOCkFc+hbcrjYx4GeuF1UjFME=
+		</data>
 		<key>Headers/RKDiscoveryAgentLE.h</key>
 		<data>
-		rvGXgydVXBj1F3Y1mmEU10+6PEw=
+		r7EniVoKxn8oEkqc2G1WG+k7His=
+		</data>
+		<key>Headers/RKHiByeMonitor.h</key>
+		<data>
+		a1KFqVhpIzQw4IETbqAcAcqCIRY=
 		</data>
 		<key>Headers/RKLeBaseLink.h</key>
 		<data>
@@ -42,19 +50,15 @@
 		</data>
 		<key>Headers/RKLeNode.h</key>
 		<data>
-		t/LjEqFsGk4FNHp698NeRC7HMHI=
+		fpyfPy8TTEkDxqqCnfUkPqyTcbs=
 		</data>
 		<key>Headers/RKLeProximityConnectStrategy.h</key>
 		<data>
-		gTPGy0FjPI18wa5pCyaoifvT1m4=
-		</data>
-		<key>Headers/RKLeRadioServiceWrapper.h</key>
-		<data>
-		/lw3LyOCofHNrdL8Rs3b6uehJw0=
+		JQbfqiZjcZCIMr9ffiL47mE+rEY=
 		</data>
 		<key>Headers/RKLeRobotLink.h</key>
 		<data>
-		DELsbX/WhqWXTnObM9ZoEhuFeRI=
+		dz64roawt9QArxNSbby5kO23Sns=
 		</data>
 		<key>Headers/RKNoConnectStrategy.h</key>
 		<data>
@@ -64,21 +68,33 @@
 		<data>
 		+OfTO+1Zw4Qdnq9D7DjkBQ+gQFE=
 		</data>
+		<key>Headers/RKRadioDescriptor.h</key>
+		<data>
+		7TeWeaMdmy91rT6br0nx1u0WbC0=
+		</data>
+		<key>Headers/RKRadioServiceWrapper.h</key>
+		<data>
+		5vA9D2EUht6B5FIn8Y0DxtaXlwk=
+		</data>
 		<key>Headers/RKRobotDiscoveryAgentLE.h</key>
 		<data>
-		FnYbSAI/Y6yW0V2adeN+3yRoPUM=
+		7fc5j9L0Fn4PpBdAj3bRK8Vc9e8=
 		</data>
 		<key>Headers/RKRobotLE.h</key>
 		<data>
-		Ox+yWWgE12RYzcnS+RKTOvEKvSg=
+		//Z+F98G1kjRR0gcDo6wiPb9qgQ=
+		</data>
+		<key>Headers/RKRobotRadioDescriptor.h</key>
+		<data>
+		7hXPSFaWzvpvvllXIEqsgzbvl9k=
 		</data>
 		<key>Headers/RobotKitLE.h</key>
 		<data>
-		ujOHf88UHMez/lkCLUH3AakG6Rk=
+		SluG643NKWHsXwhSi2i7YudiKSk=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ZYJr0799R1cYuPM0XN+qQkIh1Zc=
+		Jo9FT4TbZKCdfyhX5TQvyI2oT8U=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -99,9 +115,17 @@
 		<data>
 		j6HhecJ5mksEukzBQiccyCpmhow=
 		</data>
+		<key>Headers/RKDeviceInfoServiceWrapper.h</key>
+		<data>
+		jqeOCkFc+hbcrjYx4GeuF1UjFME=
+		</data>
 		<key>Headers/RKDiscoveryAgentLE.h</key>
 		<data>
-		rvGXgydVXBj1F3Y1mmEU10+6PEw=
+		r7EniVoKxn8oEkqc2G1WG+k7His=
+		</data>
+		<key>Headers/RKHiByeMonitor.h</key>
+		<data>
+		a1KFqVhpIzQw4IETbqAcAcqCIRY=
 		</data>
 		<key>Headers/RKLeBaseLink.h</key>
 		<data>
@@ -121,19 +145,15 @@
 		</data>
 		<key>Headers/RKLeNode.h</key>
 		<data>
-		t/LjEqFsGk4FNHp698NeRC7HMHI=
+		fpyfPy8TTEkDxqqCnfUkPqyTcbs=
 		</data>
 		<key>Headers/RKLeProximityConnectStrategy.h</key>
 		<data>
-		gTPGy0FjPI18wa5pCyaoifvT1m4=
-		</data>
-		<key>Headers/RKLeRadioServiceWrapper.h</key>
-		<data>
-		/lw3LyOCofHNrdL8Rs3b6uehJw0=
+		JQbfqiZjcZCIMr9ffiL47mE+rEY=
 		</data>
 		<key>Headers/RKLeRobotLink.h</key>
 		<data>
-		DELsbX/WhqWXTnObM9ZoEhuFeRI=
+		dz64roawt9QArxNSbby5kO23Sns=
 		</data>
 		<key>Headers/RKNoConnectStrategy.h</key>
 		<data>
@@ -143,17 +163,29 @@
 		<data>
 		+OfTO+1Zw4Qdnq9D7DjkBQ+gQFE=
 		</data>
+		<key>Headers/RKRadioDescriptor.h</key>
+		<data>
+		7TeWeaMdmy91rT6br0nx1u0WbC0=
+		</data>
+		<key>Headers/RKRadioServiceWrapper.h</key>
+		<data>
+		5vA9D2EUht6B5FIn8Y0DxtaXlwk=
+		</data>
 		<key>Headers/RKRobotDiscoveryAgentLE.h</key>
 		<data>
-		FnYbSAI/Y6yW0V2adeN+3yRoPUM=
+		7fc5j9L0Fn4PpBdAj3bRK8Vc9e8=
 		</data>
 		<key>Headers/RKRobotLE.h</key>
 		<data>
-		Ox+yWWgE12RYzcnS+RKTOvEKvSg=
+		//Z+F98G1kjRR0gcDo6wiPb9qgQ=
+		</data>
+		<key>Headers/RKRobotRadioDescriptor.h</key>
+		<data>
+		7hXPSFaWzvpvvllXIEqsgzbvl9k=
 		</data>
 		<key>Headers/RobotKitLE.h</key>
 		<data>
-		ujOHf88UHMez/lkCLUH3AakG6Rk=
+		SluG643NKWHsXwhSi2i7YudiKSk=
 		</data>
 	</dict>
 	<key>rules</key>

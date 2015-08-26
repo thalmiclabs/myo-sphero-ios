@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/RUICalibrateButtonGestureHandler.h</key>
 		<data>
-		GA5KWvrtmkttZon6yImOL1IWZjg=
+		dJOrzmmJN8039feAfC1A5/7wIpk=
 		</data>
 		<key>Headers/RUICalibrateGestureHandler.h</key>
 		<data>
@@ -72,6 +72,14 @@
 		<data>
 		o+bg4x4iWqO68JRXYCJ7NEsv+/A=
 		</data>
+		<key>Headers/RUIDiscoveryButton.h</key>
+		<data>
+		sbJsh1cQJr9L502fudkdpXKHU3k=
+		</data>
+		<key>Headers/RUIDiscoveryStatusView.h</key>
+		<data>
+		tHr8NJAFhZWVyYcl/nilvy+Lf1w=
+		</data>
 		<key>Headers/RUIFlickGestureRecognizer.h</key>
 		<data>
 		rHgBa9LHLaCsB0du3NMR/MHNpRE=
@@ -108,17 +116,21 @@
 		<data>
 		kxawqiKJy37bHfC5rWRc2DZVIJk=
 		</data>
+		<key>Headers/RUIRobotStatusLabel.h</key>
+		<data>
+		thqqfcwhG0XBznU0td3THeaEFWI=
+		</data>
 		<key>Headers/RUISlideToSleepViewController.h</key>
 		<data>
 		L5XpZBH1zzfNoaoiP9dSd0/+7W8=
 		</data>
 		<key>Headers/RobotUIKit.h</key>
 		<data>
-		1k5mHZxz0ZpPq74SnmikuaYhCzg=
+		+q8GOoCpOPIbad1zxO+gf1Rdo+A=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		iV6rBnL39UZUBVULh2yloImR5BI=
+		TdIrSb7iZrClw/KaFf7o9ceTGFc=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -137,7 +149,7 @@
 		</data>
 		<key>Headers/RUICalibrateButtonGestureHandler.h</key>
 		<data>
-		GA5KWvrtmkttZon6yImOL1IWZjg=
+		dJOrzmmJN8039feAfC1A5/7wIpk=
 		</data>
 		<key>Headers/RUICalibrateGestureHandler.h</key>
 		<data>
@@ -191,6 +203,14 @@
 		<data>
 		o+bg4x4iWqO68JRXYCJ7NEsv+/A=
 		</data>
+		<key>Headers/RUIDiscoveryButton.h</key>
+		<data>
+		sbJsh1cQJr9L502fudkdpXKHU3k=
+		</data>
+		<key>Headers/RUIDiscoveryStatusView.h</key>
+		<data>
+		tHr8NJAFhZWVyYcl/nilvy+Lf1w=
+		</data>
 		<key>Headers/RUIFlickGestureRecognizer.h</key>
 		<data>
 		rHgBa9LHLaCsB0du3NMR/MHNpRE=
@@ -227,13 +247,17 @@
 		<data>
 		kxawqiKJy37bHfC5rWRc2DZVIJk=
 		</data>
+		<key>Headers/RUIRobotStatusLabel.h</key>
+		<data>
+		thqqfcwhG0XBznU0td3THeaEFWI=
+		</data>
 		<key>Headers/RUISlideToSleepViewController.h</key>
 		<data>
 		L5XpZBH1zzfNoaoiP9dSd0/+7W8=
 		</data>
 		<key>Headers/RobotUIKit.h</key>
 		<data>
-		1k5mHZxz0ZpPq74SnmikuaYhCzg=
+		+q8GOoCpOPIbad1zxO+gf1Rdo+A=
 		</data>
 	</dict>
 	<key>rules</key>

@@ -31,3 +31,6 @@
 
 #pragma mark - Compatibility
 #import "RKMacroObject+Compatibility.h"
+
+#pragma mark - Oval
+#import "RKOvalControl.h"

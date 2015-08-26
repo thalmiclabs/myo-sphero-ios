@@ -14,14 +14,12 @@
  * Command to assign the operation mode of Sphero. The user hack mode enables ASCII shell commands.
  * @sa
  */
-@interface RKSetFactoryDeviceModeCommand : RKDeviceCommand {
-    UInt32 password;
-}
+@interface RKSetFactoryDeviceModeCommand : RKDeviceCommand
 
 /*!
  * Property for the mode to be set with this command.
  */
-@property ( nonatomic, readonly ) BOOL mode;
+@property ( nonatomic, readonly ) uint8_t mode;
 
 /*!
  * Initiazer that sets the mode for the robot.

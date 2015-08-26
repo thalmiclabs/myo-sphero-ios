@@ -4,6 +4,9 @@
 
 #import <RobotCommandKit/RobotCommandKit.h>
 
+extern const ushort MINIMUM_BLOCK_ID;
+extern const ushort MAXIMUM_BLOCK_ID;
+
 @interface RKWritePersistentPageCommand : RKDeviceCommand
 
 + (instancetype)new NS_UNAVAILABLE;

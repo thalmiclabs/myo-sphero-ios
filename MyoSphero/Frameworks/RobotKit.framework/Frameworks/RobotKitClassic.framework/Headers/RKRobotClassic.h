@@ -21,8 +21,7 @@ extern NSString *const RKRobotKey;
  */
 @interface RKRobotClassic : NSObject < RKRobotBase, RKSessionDelegate, RKLinkDelegate >
 
-@property ( strong, nonatomic ) RKClassicLink *link;
-@property ( strong, nonatomic, readonly ) EAAccessory *accessory;
+@property ( strong, nonatomic ) RKClassicLink *radioLink;
 
 /*! The bluetooth MAC address for the robot */
 @property ( strong, nonatomic, readonly ) NSString *bluetoothAddress;
@@ -45,13 +44,8 @@ extern NSString *const RKRobotKey;
  */
 - (id) initWithAccessory:(EAAccessory *) anAccessory;
 
-/*!
- * Test that the robot object is equal to this robot which means the represent the
- * same device.
- * @param robot The other robot object.
- * @return YES if the other object represents the same robot device. 
- */
-- (BOOL) isEqualToRobot:(id<RKRobotBase>) robot;
+
+- (NSNumber*) signalQuality;
 
 - (void) disconnect;
 

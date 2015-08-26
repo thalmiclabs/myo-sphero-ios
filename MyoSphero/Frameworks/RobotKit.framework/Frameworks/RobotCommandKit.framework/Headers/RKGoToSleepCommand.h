@@ -18,8 +18,7 @@
 typedef NS_ENUM(uint8_t, RKSleepType) {
     RKSleep = 0x00,          // regular sleep - robot advertises at high rate with
     RKSleepDeep = 0x01,
-    RKSleepLowPower = 0x02,
-    RKSleepNoMore = 0x03
+    RKSleepLowPower = 0x02
 };
 
 /*! Type to represent the sleep time interval in seconds */

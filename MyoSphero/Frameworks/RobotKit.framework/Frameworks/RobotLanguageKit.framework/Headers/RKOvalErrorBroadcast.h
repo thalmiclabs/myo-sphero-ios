@@ -3,11 +3,10 @@
 //
 
 #import <RobotCommandKit/RobotCommandKit.h>
-#import <OvalCompiler/ovmlanguage.h>
 
 @interface RKOvalErrorBroadcast : RKAsyncMessage
 
-@property (nonatomic) enum OvmErrorCodes errorCode;
+@property (nonatomic) int errorCode;
 
 - (NSString *)errorDescription;
 

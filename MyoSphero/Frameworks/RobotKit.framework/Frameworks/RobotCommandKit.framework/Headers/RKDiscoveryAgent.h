@@ -20,5 +20,6 @@ typedef void (^RKRobotConnectBlock)(id<RKRobotBase> robot);
 
 +(void) connect:(id<RKRobotBase>) robot withCompletionHandler:(RKRobotConnectBlock) connectBlock;
 
+-(BOOL) isDiscovering;
 
 @end

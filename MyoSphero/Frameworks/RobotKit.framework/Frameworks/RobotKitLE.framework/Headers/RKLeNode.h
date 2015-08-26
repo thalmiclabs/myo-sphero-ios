@@ -17,6 +17,8 @@ typedef NS_ENUM (uint8_t, RKLEConnectionState) {
 };
 
 @protocol RKLeNode;
+@class RKRadioDescriptor;
+
 
 @protocol RKLeInternalConnectDelegate <NSObject>
 
@@ -24,6 +26,8 @@ typedef NS_ENUM (uint8_t, RKLEConnectionState) {
 -(void)nodeDidWake:(id<RKLeNode>) node;
 
 @end
+
+
 
 /*! data to enable a connect strategy to pick the best device to connect to */
 @protocol RKLeNode <NSObject>
@@ -41,18 +45,14 @@ typedef NS_ENUM (uint8_t, RKLEConnectionState) {
 /*! state Link is attempting to obtain */
 @property (nonatomic, readonly) RKLEConnectionState connectionState;
 
-/*! required service UUIDS for the device to function */
-+(NSArray*) requiredUUIDS;
-
-/*! UUIDS required for the device to be discovered */
-+(NSArray*) serviceUUIDSForDiscovery;
-
 -(id) initWithPeripheral:(CBPeripheral*) p andCentral:(CBCentralManager*) mgr;
+
+-(NSString*) name;
 -(NSNumber*) signalQuality;
 -(BOOL)isConnecting;
 -(BOOL)isConnected;
 
 @optional
--(void) startServiceDiscovery;
+-(void) startServiceDiscoveryWith:(RKRadioDescriptor*) radioDescriptor;
 
 @end

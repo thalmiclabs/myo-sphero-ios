@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Orbotix Inc. All rights reserved.
 //
 
-#import <RobotCommandKit/RobotCommandKit.h>
+#import "RobotCommandKit.h"
 
 @interface RKReadOdometerResponse : RKDeviceResponse
 
-@property (readonly) uint32_t distanceInMeters;
+@property (readonly) uint32_t distanceInCentimeters;
 
 @end

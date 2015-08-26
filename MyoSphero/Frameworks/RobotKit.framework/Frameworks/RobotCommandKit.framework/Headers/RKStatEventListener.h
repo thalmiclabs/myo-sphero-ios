@@ -1,8 +1,4 @@
 //
-//  RKStatEventListener.h
-//  RobotKitLE
-//
-//  Created by Hunter Lang on 7/14/14.
 //  Copyright (c) 2014 Orbotix Inc. All rights reserved.
 //
 
@@ -12,6 +8,10 @@
 @interface RKStatEventListener : NSObject <RKResponseObserver>
 
 + (instancetype)sharedListener;
+
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
+
 - (void)startListener;
 - (void)stopListener;
 

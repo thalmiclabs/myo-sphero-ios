@@ -15,7 +15,7 @@
  */
 
 /*! Mask values that are used to identifying what the returned bits mean */
-typedef NS_ENUM(uint32_t,  RKGetOptionFlagsMask) {
+typedef NS_OPTIONS(uint32_t,  RKGetOptionFlagsMask) {
     /*! Mask to prevent Sphero from going to sleep when placed in the charger and connected over Bluetooth */
     RKGetOptionFlagsPreventSleepInCharger = 		0x00000001,
     /*! Mask to enable Vector Drive, that is, when Sphero is stopped and a new roll command is issued */

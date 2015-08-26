@@ -34,12 +34,19 @@
  */
 @interface RKRobotDiscoveryAgentLE : NSProxy <RKDiscoveryAgent, RKDiscoveryAgentLE>
 
-/*! connected robots */
-@property (strong, nonatomic,readonly) NSMutableArray *connectedRobots;
-
 +(RKRobotDiscoveryAgentLE *) sharedAgent;
 
 +(id<RKRobotBase>) robotForName:(NSString*) name;
 -(id<RKRobotBase>) robotForName:(NSString*) name;
+
+- (NSOrderedSet*) connectingRobots;
+
+/*! radio connected robots 
+ @returns proxy to connectedNodes */
+- (NSOrderedSet*) connectedRobots;
+
+/*! online (main processor on) robots 
+ @returns proxy to onlineNodes */
+- (NSOrderedSet*) onlineRobots;
 
 @end

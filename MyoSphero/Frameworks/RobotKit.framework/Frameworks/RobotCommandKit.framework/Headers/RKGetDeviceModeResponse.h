@@ -12,7 +12,9 @@ typedef NS_ENUM(uint8_t, RKDeviceMode ){
 	/*! Normal mode which is the default operation mode. */
 	RKDeviceModeNormal = 0,
 	/*! User hack mode. This mode enables ASCII shell command. Refer to the shell commands document for further details. */
-	RKDeviceModeUserHack = 1
+	RKDeviceModeUserHack = 1,
+	/*! Factory Mode.  This mode is enabled at the factory and is not a mode that can be set after leaving the factory. */
+	RKDeviceModeFactory = 2
 };
 
 

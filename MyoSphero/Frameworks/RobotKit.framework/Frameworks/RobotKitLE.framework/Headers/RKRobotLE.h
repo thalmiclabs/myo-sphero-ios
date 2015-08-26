@@ -29,7 +29,7 @@ extern NSString * const kRobotDidGetCloseNotification;
 
 /*! request the robot sleep - upon internal callback that sleepDidOccur, SDK disconnects by default. */
 -(void) sleep:(RKSleepType) sleepType;
-
+-(void) wake;
 
 -(BOOL) isOnline;
 
