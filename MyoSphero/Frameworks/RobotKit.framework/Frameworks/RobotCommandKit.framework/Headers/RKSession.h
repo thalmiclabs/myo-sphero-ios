@@ -1,17 +1,15 @@
 //
-//  RKSession.h
-//  RobotCommandKit
+//  RKLESession.h
+//  RobotKitLE
 //
-//  Created by wes on 6/5/14.
-//  Copyright (c) 2014 Orbotix Inc. All rights reserved.
+//  Created by wes on 11/22/13.
+//  Copyright (c) 2013 Orbotix. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "RKDeviceResponse.h"
 #import "RKDeviceAsyncData.h"
 #import "RKDeviceCommand.h"
-
-
 
 @protocol RKSessionDelegate <NSObject>
 
@@ -25,16 +23,13 @@
 
 @interface RKSession : NSObject
 
-+ (instancetype)new NS_UNAVAILABLE;
-- (instancetype)init NS_UNAVAILABLE;
-
 +(id) sessionWithDelegate:(id<RKSessionDelegate>) delegate;
 
++ (void)setMaxNativeSequenceNumber:(uint8_t)sequenceNumber;
 -(void) processRawData:(NSData*) rawBytesFromConnectedDevice;
 
-+ (void)setMaxNativeSequenceNumber:(uint8_t)sequenceNumber;
 
--(NSData*) generatePacketForCommand:(RKDeviceCommand*) command withAck:(BOOL) ack;
--(NSData*) generatePacketForCommand:(RKDeviceCommand*) command;
+-(NSData*) packetForCommand:(RKDeviceCommand*) command withACK:(BOOL) ack;
+-(NSData*) packetForCommand:(RKDeviceCommand*) command;
 
 @end

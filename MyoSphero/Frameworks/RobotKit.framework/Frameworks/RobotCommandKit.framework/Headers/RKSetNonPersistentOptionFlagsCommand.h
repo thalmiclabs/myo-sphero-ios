@@ -19,7 +19,7 @@
  */
 
 /*! Mask values that are used to identifying what the returned bits mean */
-typedef NS_ENUM(uint32_t,  RKGetNonPersistentOptionFlagsMask) {
+typedef NS_OPTIONS(uint32_t,  RKGetNonPersistentOptionFlagsMask) {
    /*! Mask to force Sphero to stop on disconnect */
    RKGetNonPersistentOptionFlagsStopOnDisconnect =             0x00000001,
    /*! Mask to force Ollie to drive at speeds equivalent to Sphero */

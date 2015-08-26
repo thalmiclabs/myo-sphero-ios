@@ -12,5 +12,7 @@
 
 -(uint32_t) uint32Value;
 -(uint16_t) uint16Value;
+-(float) fixedPoint16Value;
+- (NSData *)reverse;
 
 @end

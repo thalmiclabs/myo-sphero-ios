@@ -11,12 +11,13 @@
 
 typedef NS_ENUM( uint8_t, RKRobotModel ){
 	SpheroS1  = 0,
-	SpheroS11 = 1,
+	OllieBadFirmware = 1,
 	SpheroS2  = 2,
 	SpheroS3  = 3,
 	Unknown4  = 4,
 	Ollie01   = 10,
-	Ray01     = 30
+	BB8_01    = 30,
+	WeBall    = 40
 };
 
 
@@ -32,7 +33,7 @@ typedef NS_ENUM( uint8_t, RKRobotModel ){
 
 /*! A version number for the version data returned. Currently set to 1.*/
 @property ( strong, nonatomic, readonly ) NSString *recordVersion;
-/*! The model number of the robot. Current is set to 2 for Sphero. */
+/*! The model number of the robot. */
 @property ( nonatomic, readonly ) RKRobotModel modelNumber;
 /*! A version number for the hardware. This a single digit number. */
 @property ( strong, nonatomic, readonly ) NSString *hardwareVersion;

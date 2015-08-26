@@ -7,7 +7,10 @@
 
 extern NSString * const kRobotDidChangeStateNotification;
 extern NSString * const kRobotIsAvailableNotification;
+extern NSString * const kRobotRemoteRSSIChangedNotification;
 
+extern NSString* const kDiscoveryScanDidStart;
+extern NSString* const kDiscoveryScanDidStop;
 
 /*! Base Robot Notification - contains the robot in userInfo with accessor*/
 @interface RKRobotNotification : NSNotification
@@ -50,7 +53,9 @@ typedef NS_ENUM(uint8_t, RKRobotChangedStateNotificationType) {
 @end
 
 
-/*! Base Robot Changed State Notification - Fire when the robot is connecting, connected, etc */
+
+/*! Base Robot Changed State Notification - Fire when the robot is connecting, connected, online, etc.
+ Please check the state for the main processor to assess Bootloader or MainApp. */
 @interface RKRobotChangedStateNotification : RKRobotNotification
 
 @property (readonly) RKRobotChangedStateNotificationType type;
@@ -58,5 +63,17 @@ typedef NS_ENUM(uint8_t, RKRobotChangedStateNotificationType) {
 +(id) notificationWithRobot:(id<RKRobotBase>) robot andType:(RKRobotChangedStateNotificationType) type;
 
 -(NSString*) typeString;
+
+@end
+
+
+
+@interface RKRobotRSSIChangedNotification : RKRobotNotification
+
++(id) notificationWithRobot:(id<RKRobotBase>) robot andRemoteRSSI:(uint8_t) rssi;
+
+@property (readonly) int8_t remoteRSSI;
+
+- (NSNumber *)signalQuality;
 
 @end

@@ -5,8 +5,8 @@
 /*! @file */
 
 #import <Foundation/Foundation.h>
-#import <RobotCommandKit/RKDeviceMessage.h>
-#import <RobotCommandKit/RKResponseCodes.h>
+#import "RKDeviceMessage.h"
+#import "RKResponseCodes.h"
 
 /*!
  * @brief Abstract class that represents a response for a command.
@@ -30,6 +30,8 @@
 
 /*! pull response data from raw packet data */
 - (NSData*) responseData;
+
+- (BOOL) isError;
 
 
 @end

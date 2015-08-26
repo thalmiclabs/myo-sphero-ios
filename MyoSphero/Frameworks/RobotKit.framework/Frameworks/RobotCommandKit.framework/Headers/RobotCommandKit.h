@@ -1,12 +1,12 @@
 //
-//  Copyright (c) 2014 Orbotix Inc. All rights reserved.
+//  Copyright (c) 2014-2015 Orbotix Inc. All rights reserved.
 //
 
-#pragma mark - todo private
 #import "RKLinkDelegate.h"
 #import "RKSession.h"
 #import "RKRobotBase.h"
 #import "RKDiscoveryAgent.h"
+#import "RKAppUtils.h"
 
 #pragma mark - all robots
 #import "RKRobotNotification.h"
@@ -41,6 +41,7 @@
 #import "RKVersioningCommand.h"
 #import "RKJumpToBootloaderCommand.h"
 #import "RKGoToSleepCommand.h"
+#import "RKGetChargerStateCommand.h"
 
 //// Bootloader
 #import "RKJumpToMainAppCommand.h"
@@ -70,6 +71,7 @@
 #import "RKSetPIDCommand.h"
 #import "RKGetSkuCommand.h"
 #import "FWLevel1DiagnosticCommand.h"
+#import "RKForceChargeCommand.h"
 
 #pragma mark - LEDS
 #import "RKGetUserRGBLEDColorCommand.h"
@@ -121,6 +123,7 @@
 #import "RKGetChassisIdResponse.h"
 #import "RKGetSkuResponse.h"
 #import "FWLevel1DiagnosticResponse.h"
+#import "RKGetChargerStateResponse.h"
 
 #pragma mark - Async Data
 #import "RKCollisionDetectedAsyncData.h"
@@ -148,3 +151,16 @@
 
 #import "RKResponseFactory_PrivateAdditions.h"
 #import "RKAsyncFactory_PrivateAdditions.h"
+
+#import "RKTypes.h"
+
+
+#import "RKTemperatureCommand.h"
+#import "RKTemperatureResponse.h"
+
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+

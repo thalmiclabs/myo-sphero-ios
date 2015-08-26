@@ -12,4 +12,6 @@
 
 @property (strong, readonly) NSString* sku;
 
+-(BOOL) isDarkside;
+
 @end

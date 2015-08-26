@@ -15,15 +15,15 @@
 
 // Don't change the values of the enum because RUICalibrateTouchOverlayView depends
 // on these values to be the ones they are
-typedef NS_ENUM(uint8_t,  RUICalibrationCircleLocation) {
+typedef NS_OPTIONS(uint8_t,  RUICalibrationCircleLocation) {
     /*! Draws the calibration circle to the left of the button */
-    RUICalibrationCircleLocationLeft   = 0,
+    RUICalibrationCircleLocationLeft   = (1 << 0),
     /*! Draws the calibration circle above the button */
-    RUICalibrationCircleLocationAbove  = 1,
+    RUICalibrationCircleLocationAbove  = (1 << 1),
     /*! Draws the calibration circle to the right of the button */
-    RUICalibrationCircleLocationRight  = 2,
+    RUICalibrationCircleLocationRight  = (1 << 2),
     /*! Draws the calibration circle below the button */
-    RUICalibrationCircleLocationBelow  = 3,
+    RUICalibrationCircleLocationBelow  = (1 << 3)
 };
 
 /*!

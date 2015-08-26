@@ -8,7 +8,7 @@
 
 /*! Enumerations for the various flags that can be set for a macro. Multiple flags can be
  set by using a bitwise or operation on them. */
-typedef NS_ENUM(uint8_t, RKMacroFlags) {
+typedef NS_OPTIONS(uint8_t, RKMacroFlags) {
    RKMacroFlagNone = 0x0000, /*!< Used when no flags are to be set. */
       RKMacroFlagMotorControl = 0x0001, /*!< Kills the drive motors on exit or abort. */
       RKMacroFlagExclusiveDrive = 0x0002, /*!< Gives the macro exclusive control of driving. */

@@ -8,6 +8,7 @@
 
 /*! Enumerated values for a robot's power state. */
 typedef NS_ENUM(uint8_t,   RKBatteryPowerState ){
+	RKBatteryPowerStateUnknown = 0,
 	/*!
 	 * The robot is charging. Note: an inductive charged robot will normally sleep in the charger,
 	 * so you will not be able to issue a command to check the state.
@@ -20,6 +21,15 @@ typedef NS_ENUM(uint8_t,   RKBatteryPowerState ){
 	/*! The robot's battery is critically low and the user needs to charge it immediatly. */
 	RKBatteryPowerStateCritical = 4
 };
+
+
+/*! Charger state (introduced in BB-8) */
+typedef NS_ENUM(NSUInteger, RKChargerState) {
+	RKChargerState_Unknown = 0,
+	RKChargerState_OutOfCharger = 1,
+	RKChargerState_InCharger = 2
+};
+
 
 /*!
  Enumerated values for the storage type used for OrbBasic programs.

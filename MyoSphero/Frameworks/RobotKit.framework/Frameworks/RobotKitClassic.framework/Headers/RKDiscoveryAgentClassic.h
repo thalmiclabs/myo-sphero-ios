@@ -14,10 +14,9 @@
 @interface RKDiscoveryAgentClassic : NSObject <RKDiscoveryAgent, EAAccessoryDelegate>
 
 /*! Available robots. - NOT NECESSARILY CONNECTED */
-@property ( nonatomic, readonly , strong) NSMutableSet *availableRobots;
+@property ( nonatomic, readonly , strong) NSMutableOrderedSet *availableRobots;
 
-/*! Set of connectedRobots in order of connection */
-@property ( nonatomic, readonly , strong) NSMutableArray *connectedRobots;
+-(NSOrderedSet*) connectedRobots;
 
 /*! 
  *  Sets the connection to skip jumping to the main application when opening
@@ -41,6 +40,10 @@
 -(void) disconnect:(RKRobotClassic*) robot;
 
 -(void) disconnectAll;
+
+-(NSOrderedSet*) onlineRobots;
+
+- (BOOL) isDiscovering;
 
 @end
 

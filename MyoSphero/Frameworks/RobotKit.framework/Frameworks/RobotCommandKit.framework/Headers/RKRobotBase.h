@@ -32,9 +32,13 @@ typedef void (^RKDeviceResponseBlock)(RKDeviceResponse* response);
 -(NSNumber*) connectTimeInSeconds;
 -(RKVersioningResponse*) versions;
 
+/*! Robot radio is connected but there is no guarantee of the Main Firmware App state. */
 -(BOOL) isConnected;
 
+/*! Robot is Online, in the Main Firmware App and is ready for play! */
 -(BOOL) isOnline;
+
+-(BOOL) isBootloader;
 
 /*! default sleep mode for a robot.  BTLE robots sleep is different from Classic Robots. */
 -(void) sleep;
@@ -55,5 +59,19 @@ typedef void (^RKDeviceResponseBlock)(RKDeviceResponse* response);
 -(void) handleResponse:(RKDeviceResponse*) response forRobot:(id<RKRobotBase>) robot;
 -(void) handleResponseString:(NSString*) stringResponse forRobot:(id<RKRobotBase>) robot;
 -(void) handleAsyncMessage:(RKAsyncMessage*) message forRobot:(id<RKRobotBase>) robot;
+
+
+//#pragma mark - responses
+//-(void) handleReadOdometerResponse:(RKGetOdometerResponse*) response forRobot:(id<RKRobotBase>) robot;
+//
+//
+//#pragma mark - unsolicted robot messages
+//
+//-(void) handleSleepWillOccurAsyncMessage:(RKSleepWillOccurMessage*) msg forRobot:(id<RKRobotBase>) robot;
+//-(void) handleSleepDidOccurAsyncMessage:(RKSleepDidOccurMessage*) msg forRobot:(id<RKRobotBase>) robot;
+//-(void) handleCollisionDetectedAsyncMessage:(RKCollisionDetectedAsyncData*) msg forRobot:(id<RKRobotBase>) robot;
+//-(void) handleSensorsAsyncData:(RKDeviceSensorsAsyncData*) msg forRobot:(id<RKRobotBase>) robot;
+//[self registerClass:[RKSelfLevelCompleteAsyncData class]];
+//[self registerClass:[RKPowerNotificationAsyncData class]];
 
 @end
