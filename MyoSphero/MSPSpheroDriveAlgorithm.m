@@ -133,7 +133,7 @@
         case RKRobotOnline: {
             if ([notification.robot isKindOfClass:[RKRobotLE class]]) {
                 // Ollie cannot handle messages at 50 Hz, so reduce the number of messages sent to Ollie.
-                self.myoMessagesForEachSpheroMessage = 2;
+                self.myoMessagesForEachSpheroMessage = 3;
                 self.robot = [RKOllie convenienceWithRobot:notification.robot];
             } else if ([notification.robot isKindOfClass:[RKRobotClassic class]]) {
                 self.myoMessagesForEachSpheroMessage = 1;
